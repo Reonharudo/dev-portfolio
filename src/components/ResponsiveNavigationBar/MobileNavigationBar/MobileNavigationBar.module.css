@@ -1,0 +1,13 @@
+.navigation_container {
+    background-color: var(--main-background);
+    position: fixed;
+    inset: 0; /* shorthand for top right left bottom */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    align-items: center;
+}

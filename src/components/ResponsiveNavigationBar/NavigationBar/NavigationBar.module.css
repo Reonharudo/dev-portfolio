@@ -1,0 +1,19 @@
+.navigation_container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+.mobile_wrapper {
+    display: none;
+}
+
+@media screen and (width <= 940px) {
+    .mobile_wrapper {
+        display: block;
+    }
+
+    .desktop_wrapper {
+        display: none;
+    }
+}

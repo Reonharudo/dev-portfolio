@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import styles from "./rootLayout.module.css";
 import { FloatingLinkBar } from "@/components/FloatingLinkBar/FloatingLinkBar";
-import { NavigationBar } from "@/components/NavigationBar/NavigationBar";
+import { NavigationBar } from "@/components/ResponsiveNavigationBar/NavigationBar/NavigationBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
