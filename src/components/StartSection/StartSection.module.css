@@ -42,9 +42,7 @@
 
 @media screen and (width <= 940px) {
     .container {
-        height: 100vh;
         grid-template-columns: none;
-        grid-template-rows: 30vh;
         grid-template-areas:
             "description"
             "avatar_image";

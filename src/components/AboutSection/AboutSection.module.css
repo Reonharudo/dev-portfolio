@@ -1,0 +1,21 @@
+.description_container {
+    font-size: 1.2rem;
+    width: 70%;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (width <= 940px) {
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .description_container {
+        width: 100%;
+    }
+}
