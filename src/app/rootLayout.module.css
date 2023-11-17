@@ -1,0 +1,19 @@
+.app {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_content {
+    grid-area: main_content;
+}
+
+.navigation_container {
+    grid-area: header;
+    display: flex;
+    justify-content: end;
+}
+
+.footer {
+    grid-area: footer;
+}

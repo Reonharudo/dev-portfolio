@@ -1,0 +1,63 @@
+/*
+    Basic Structure
+*/
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "description avatar_image";
+    width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+    column-gap: 3rem;
+}
+.avatar_image_container {
+    grid-area: avatar_image;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.description_container {
+    grid-area: description;
+    display: flex;
+    align-items: center;
+}
+
+/*
+    Description
+*/
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+/*
+    Avatar Image
+*/
+.avatar_image {
+    border-radius: 30px;
+}
+
+@media screen and (width <= 940px) {
+    .container {
+        height: 100vh;
+        grid-template-columns: none;
+        grid-template-rows: 30vh;
+        grid-template-areas:
+            "description"
+            "avatar_image";
+        row-gap: 0rem;
+        width: 100%;
+    }
+
+    .avatar_image {
+        width: 90%;
+        height: auto;
+    }
+
+    .avatar_image_container {
+        align-items: flex-start;
+    }
+}
