@@ -46,7 +46,7 @@
         grid-template-areas:
             "description"
             "avatar_image";
-        row-gap: 0rem;
+
         width: 100%;
     }
 

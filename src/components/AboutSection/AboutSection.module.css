@@ -1,21 +1,32 @@
-.description_container {
-    font-size: 1.2rem;
-    width: 70%;
+.content {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-areas: "description_area" "image_area";
 }
 
-.container {
-    width: 80%;
+.description_container {
+    grid-area: description_area;
+    font-size: 1.2rem;
+}
+
+.image_section {
+    grid-area: image_area;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (width <= 940px) {
-    .container {
-        width: 100%;
-        flex-direction: column;
+    .content {
+        grid-template-areas: "description_area description_area" "image_area";
     }
 
     .description_container {
-        width: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .image_section {
+        display: block;
     }
 }
