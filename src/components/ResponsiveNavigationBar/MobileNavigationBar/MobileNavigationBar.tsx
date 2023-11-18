@@ -13,7 +13,7 @@ export function MobileNavigationBar() {
     }, [isMenuOpen]);
 
     return (
-        <div style={{ position: "relative" }}>
+        <div>
             {isMenuOpen &&
                 createPortal(
                     <div className={styles.navigation_container}>
@@ -64,6 +64,7 @@ export function MobileNavigationBar() {
                 )}
             {!isMenuOpen && (
                 <Image
+                    className={styles.menu_icon}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     src={"/menu_icon.svg"}
                     alt={"Menu Icon"}

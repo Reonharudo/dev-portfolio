@@ -92,3 +92,7 @@
 .link:hover {
     border-bottom: 0.13rem solid black;
 }
+
+.menu_icon {
+    margin-top: 1rem;
+}
