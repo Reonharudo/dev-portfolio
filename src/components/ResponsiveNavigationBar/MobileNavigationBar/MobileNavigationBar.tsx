@@ -16,35 +16,40 @@ export function MobileNavigationBar() {
             {isMenuOpen &&
                 createPortal(
                     <div className={styles.navigation_container}>
-                        <div className={styles.content}>
-                            <div>
-                                <button
+                        <div className={styles.btn_container}>
+                            <button
+                                className={styles.close_btn}
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            >
+                                <Image
                                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                >
-                                    <Image
-                                        onClick={() =>
-                                            setIsMenuOpen(!isMenuOpen)
-                                        }
-                                        src={"/close_icon.svg"}
-                                        alt={"Close"}
-                                        width={30}
-                                        height={30}
-                                    />
-                                    Close
-                                </button>
-                            </div>
+                                    src={"/close_icon.svg"}
+                                    alt={"Close"}
+                                    width={30}
+                                    height={30}
+                                />
+                                Close
+                            </button>
+                        </div>
+                        <div className={styles.link_content}>
+                            <a href={"#start"} className={styles.link}>
+                                Start
+                            </a>
+                            <a href={"#about"} className={styles.link}>
+                                About
+                            </a>
 
-                            <NavigationItem url={"#start"} text={"Start"} />
-                            <NavigationItem url={"#about"} text={"About"} />
-                            <NavigationItem
-                                url={"#techstack"}
-                                text={"Techstack"}
-                            />
-                            <NavigationItem
-                                url={"#projects"}
-                                text={"Projects"}
-                            />
-                            <NavigationItem url={"#contact"} text={"Contact"} />
+                            <a href={"#techstack"} className={styles.link}>
+                                TechStack
+                            </a>
+
+                            <a href={"#projects"} className={styles.link}>
+                                Projects
+                            </a>
+
+                            <a href={"#contact"} className={styles.link}>
+                                Contact
+                            </a>
                         </div>
                     </div>,
                     document.body

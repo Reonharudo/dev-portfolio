@@ -1,13 +1,94 @@
+/* Structure */
 .navigation_container {
     background-color: var(--main-background);
     position: fixed;
     inset: 0; /* shorthand for top right left bottom */
-}
 
-.content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: slide_from_top;
+    animation-duration: 1s;
+}
+
+@keyframes slide_from_top {
+    from {
+        height: 0vh;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+.link_content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin-top: 1rem;
+    height: 100%;
+    align-items: center;
+    margin-top: 12vh;
+
+    visibility: hidden; /* Initially hidden */
+    animation-name: slide_from_top_delayed; /* Use a different animation name for delayed animation */
+    animation-duration: 0.6s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+@keyframes slide_from_top_delayed {
+    from {
+        opacity: 0; /* Initially hidden */
+    }
+    to {
+        opacity: 1;
+        visibility: visible; /* Make it visible when the animation is complete */
+        transition-timing-function: ease-in; /* Add easing function */
+    }
+}
+
+/*
+    Close Btn
+*/
+.btn_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+.close_btn {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background-1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 0.5rem;
 
-    align-items: center;
+    font-size: 1.3rem;
+
+    justify-self: flex-end;
+}
+
+.close_btn:hover,
+.close_btn:active {
+    background-color: var(--background-1-hover);
+}
+
+/*
+    Link
+*/
+.link {
+    color: var(--font-color);
+    text-decoration: none;
+    border-bottom: 0.13rem solid transparent;
+    scroll-behavior: smooth;
+
+    font-size: 1.4rem;
+}
+
+.link:hover {
+    border-bottom: 0.13rem solid black;
 }
