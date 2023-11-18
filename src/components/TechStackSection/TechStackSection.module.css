@@ -1,0 +1,7 @@
+.skills_view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

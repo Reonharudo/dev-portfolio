@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(183, 219, 153);
+    padding: 0.4rem;
+    border-radius: 5px;
+    gap: 1rem;
+}
