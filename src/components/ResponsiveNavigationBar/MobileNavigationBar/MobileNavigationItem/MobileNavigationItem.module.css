@@ -1,0 +1,12 @@
+.link {
+    color: var(--font-color);
+    text-decoration: none;
+    border-bottom: 0.13rem solid transparent;
+    scroll-behavior: smooth;
+
+    font-size: 1.4rem;
+}
+
+.link:hover {
+    border-bottom: 0.13rem solid black;
+}

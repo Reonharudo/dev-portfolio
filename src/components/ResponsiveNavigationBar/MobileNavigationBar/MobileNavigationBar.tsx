@@ -4,6 +4,7 @@ import styles from "./MobileNavigationBar.module.css";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 import { NavigationItem } from "../NavigationItem/NavigationItem";
+import { MobileNavigationItem } from "./MobileNavigationItem/MobileNavigationItem";
 export function MobileNavigationBar() {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -32,24 +33,31 @@ export function MobileNavigationBar() {
                             </button>
                         </div>
                         <div className={styles.link_content}>
-                            <a href={"#start"} className={styles.link}>
-                                Start
-                            </a>
-                            <a href={"#about"} className={styles.link}>
-                                About
-                            </a>
-
-                            <a href={"#techstack"} className={styles.link}>
-                                TechStack
-                            </a>
-
-                            <a href={"#projects"} className={styles.link}>
-                                Projects
-                            </a>
-
-                            <a href={"#contact"} className={styles.link}>
-                                Contact
-                            </a>
+                            <MobileNavigationItem
+                                handleClose={setIsMenuOpen}
+                                url={"#start"}
+                                text={"Start"}
+                            />
+                            <MobileNavigationItem
+                                handleClose={setIsMenuOpen}
+                                url={"#about"}
+                                text={"About"}
+                            />
+                            <MobileNavigationItem
+                                handleClose={setIsMenuOpen}
+                                url={"#techstack"}
+                                text={"Techstack"}
+                            />
+                            <MobileNavigationItem
+                                handleClose={setIsMenuOpen}
+                                url={"#projects"}
+                                text={"Projects"}
+                            />
+                            <MobileNavigationItem
+                                handleClose={setIsMenuOpen}
+                                url={"#contact"}
+                                text={"Contact"}
+                            />
                         </div>
                     </div>,
                     document.body

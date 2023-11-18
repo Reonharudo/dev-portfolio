@@ -1,12 +1,10 @@
-import { FloatingLinkBar } from "../FloatingLinkBar/FloatingLinkBar";
-import { NavigationBar } from "../NavigationBar/NavigationBar";
 import { TypingText } from "./TypingText/TypingText";
 import styles from "./StartSection.module.css";
 import Image from "next/image";
 
 export function StartSection() {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="start">
             <div className={styles.description_container}>
                 <div className={styles.description}>
                     <TypingText />
