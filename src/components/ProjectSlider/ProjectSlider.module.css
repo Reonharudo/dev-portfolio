@@ -1,18 +1,32 @@
 .container {
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 70%) minmax(0, 1fr);
     grid-template-areas: "prev_btn project_showcase next_btn";
+    grid-column-gap: 10px;
 }
 
+/*
+    Hero Project
+*/
 .project_showcase_highlight_animation {
     animation-name: increase_to_full_visbility; /* Use a different animation name for delayed animation */
     animation-duration: 2s;
     animation-fill-mode: forwards; /* Retain the final state of the animation */
 }
 
+.hero_project {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+
 .project_showcase {
     grid-area: project_showcase;
 }
+
+/*
+    Previous and After Button Area
+*/
 
 .btn_container_prev {
     grid-area: prev_btn;
@@ -72,7 +86,7 @@
 
 @keyframes slowly_increase_opacity {
     from {
-        opacity: 0.3; /* Initially hidden */
+        opacity: 0.25; /* Initially hidden */
     }
     to {
         opacity: 0.65;
@@ -84,7 +98,7 @@
         opacity: 0.65; /* Initially hidden */
     }
     to {
-        opacity: 0.3;
+        opacity: 0.25;
     }
 }
 

@@ -24,7 +24,7 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
         <div className={styles.container}>
             {currentIndex > 0 && currentIndex < projects.length && (
                 <div
-                    className={`${styles.btn_desc_container} ${styles.btn_container_prev} ${styles.inactive_item_blurry}`}
+                    className={`${styles.btn_desc_container} ${styles.inactive_item_blurry}`}
                     onClick={() => setCurrentIndex(currentIndex - 1)}
                 >
                     <ProjectShowcase
@@ -41,7 +41,7 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
                     currentIndex
                 } /* IMPORTANT: DO NOT REMOVE key={currentIndex}. This needed so that React really renders this
                 div after currentIndex changes, consequently triggering the associated keyframe with the css class 'project_showcase_highlight_animation'*/
-                className={`${styles.project_showcase} ${styles.project_showcase_highlight_animation}`}
+                className={`${styles.project_showcase}  ${styles.hero_project}  ${styles.project_showcase_highlight_animation}`}
             >
                 <ProjectShowcase
                     headline={headline}
