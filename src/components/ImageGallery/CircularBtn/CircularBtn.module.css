@@ -12,7 +12,7 @@
     background-color: transparent;
 }
 
-.btn_inactive:hover {
+.btn_inactive:hover:enabled {
     border: 3px solid var(--button-color-2--darker);
 }
 

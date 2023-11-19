@@ -9,11 +9,15 @@ export interface ImageWithDescription {
     description?: string;
 }
 
-export interface ImageGalleryProps {
+interface ImageGalleryProps {
     images: ImageWithDescription[];
+    isImmutable: boolean;
 }
 
-export function ImageGallery({ images = [] }: Readonly<ImageGalleryProps>) {
+export function ImageGallery({
+    images = [],
+    isImmutable = false,
+}: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     if (images.length === 0) {
@@ -36,6 +40,7 @@ export function ImageGallery({ images = [] }: Readonly<ImageGalleryProps>) {
             <div className={styles.selection_btn_group}>
                 {images.map((value, index) => (
                     <CircularBtn
+                        disable={isImmutable}
                         key={index}
                         isActive={index === currentIndex}
                         handleClick={() => setCurrentIndex(index)}

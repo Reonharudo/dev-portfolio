@@ -4,6 +4,12 @@
     grid-template-areas: "prev_btn project_showcase next_btn";
 }
 
+.project_showcase_highlight_animation {
+    animation-name: increase_to_full_visbility; /* Use a different animation name for delayed animation */
+    animation-duration: 2s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
 .project_showcase {
     grid-area: project_showcase;
 }
@@ -49,4 +55,44 @@
 
 .prev_btn:hover + .tooltip {
     display: block;
+}
+
+.inactive_item_blurry {
+    animation-name: slowly_decrease_opacity; /* Use a different animation name for delayed animation */
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+.inactive_item_blurry:hover {
+    animation-name: slowly_increase_opacity; /* Use a different animation name for delayed animation */
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    cursor: pointer;
+}
+
+@keyframes slowly_increase_opacity {
+    from {
+        opacity: 0.3; /* Initially hidden */
+    }
+    to {
+        opacity: 0.65;
+    }
+}
+
+@keyframes slowly_decrease_opacity {
+    from {
+        opacity: 0.65; /* Initially hidden */
+    }
+    to {
+        opacity: 0.3;
+    }
+}
+
+@keyframes increase_to_full_visbility {
+    from {
+        opacity: 0.65; /* Initially hidden */
+    }
+    to {
+        opacity: 1;
+    }
 }

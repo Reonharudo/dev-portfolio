@@ -19,28 +19,30 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
         return null;
     }
     const { headline, description, images } = projects[currentIndex];
+
     return (
         <div className={styles.container}>
             {currentIndex > 0 && currentIndex < projects.length && (
                 <div
-                    className={`${styles.btn_desc_container} ${styles.btn_container_prev}`}
+                    className={`${styles.btn_desc_container} ${styles.btn_container_prev} ${styles.inactive_item_blurry}`}
+                    onClick={() => setCurrentIndex(currentIndex - 1)}
                 >
-                    <button
-                        className={styles.prev_btn}
-                        onClick={() => setCurrentIndex(currentIndex - 1)}
-                    >
-                        <Image
-                            src={"/button-svg/arrow_left.svg"}
-                            alt={"project"}
-                            width={20}
-                            height={20}
-                        ></Image>
-                    </button>
-                    <span className={styles.tooltip}>Previous Project</span>
+                    <ProjectShowcase
+                        isImmutable={true}
+                        headline={projects[currentIndex - 1].headline}
+                        description={projects[currentIndex - 1].description}
+                        images={projects[currentIndex - 1].images}
+                    />
                 </div>
             )}
 
-            <div className={styles.project_showcase}>
+            <div
+                key={
+                    currentIndex
+                } /* IMPORTANT: DO NOT REMOVE key={currentIndex}. This needed so that React really renders this
+                div after currentIndex changes, consequently triggering the associated keyframe with the css class 'project_showcase_highlight_animation'*/
+                className={`${styles.project_showcase} ${styles.project_showcase_highlight_animation}`}
+            >
                 <ProjectShowcase
                     headline={headline}
                     description={description}
@@ -50,20 +52,15 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
 
             {currentIndex !== projects.length - 1 && (
                 <div
-                    className={`${styles.btn_desc_container} ${styles.btn_container_next}`}
+                    className={`${styles.btn_desc_container} ${styles.btn_container_next} ${styles.inactive_item_blurry}`}
+                    onClick={() => setCurrentIndex(currentIndex + 1)}
                 >
-                    <button
-                        className={styles.next_btn}
-                        onClick={() => setCurrentIndex(currentIndex + 1)}
-                    >
-                        <Image
-                            src={"/button-svg/arrow_right.svg"}
-                            alt={"project"}
-                            width={20}
-                            height={20}
-                        ></Image>
-                    </button>
-                    <span className={styles.tooltip}>Next Project</span>
+                    <ProjectShowcase
+                        isImmutable={true}
+                        headline={projects[currentIndex + 1].headline}
+                        description={projects[currentIndex + 1].description}
+                        images={projects[currentIndex + 1].images}
+                    />
                 </div>
             )}
         </div>
