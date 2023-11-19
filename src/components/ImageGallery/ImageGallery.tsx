@@ -36,6 +36,7 @@ export function ImageGallery({ images = [] }: Readonly<ImageGalleryProps>) {
             <div className={styles.selection_btn_group}>
                 {images.map((value, index) => (
                     <CircularBtn
+                        key={index}
                         isActive={index === currentIndex}
                         handleClick={() => setCurrentIndex(index)}
                     />

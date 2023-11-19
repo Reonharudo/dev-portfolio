@@ -33,8 +33,8 @@
 
     visibility: hidden; /* Initially hidden */
     animation-name: slide_from_top_delayed; /* Use a different animation name for delayed animation */
-    animation-duration: 0.6s;
-    animation-delay: 0.6s;
+    animation-duration: 0.3s;
+    animation-delay: 0.3s;
     animation-fill-mode: forwards; /* Retain the final state of the animation */
 }
 
