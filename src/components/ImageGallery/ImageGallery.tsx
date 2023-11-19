@@ -4,41 +4,42 @@ import Image from "next/image";
 import styles from "./ImageGallery.module.css";
 import { useState } from "react";
 
-interface ImageGalleryProps {
-    imageURLs: string[];
+export interface ImageWithDescription {
+    imageURL: string;
+    description?: string;
 }
 
-export function ImageGallery({
-    imageURLs = [
-        "/projects/engaku/engaku_collection_list.png",
-        "/projects/engaku/add_series_modal.png",
-    ],
-}: Readonly<ImageGalleryProps>) {
+export interface ImageGalleryProps {
+    images: ImageWithDescription[];
+}
+
+export function ImageGallery({ images = [] }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+    if (images.length === 0) {
+        return null;
+    }
+
     return (
-        <div className={`${styles.background} ${styles.container}`}>
-            <div className={styles.image_wrapper}>
+        <div className={styles.container}>
+            <div className={styles.image_desc_wrapper}>
                 <Image
-                    src={imageURLs[currentIndex]}
+                    src={images[currentIndex].imageURL}
                     alt={"project"}
                     className={styles.image}
                     width={1000}
                     height={600}
                 ></Image>
+                <p>{images[currentIndex].description}</p>
             </div>
 
             <div className={styles.selection_btn_group}>
-                {imageURLs.map((value, index) => (
+                {images.map((value, index) => (
                     <CircularBtn
                         isActive={index === currentIndex}
                         handleClick={() => setCurrentIndex(index)}
                     />
                 ))}
-            </div>
-
-            <div className={styles.description}>
-                <h1>Engaku</h1>
             </div>
         </div>
     );
