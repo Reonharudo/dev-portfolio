@@ -14,7 +14,7 @@ export function TechStackSection() {
                     }}
                 />
                 <SkillItem text={"Java Swing"} />
-                <SkillItem text={"JavaFX"} />
+                <SkillItem text={"JavaFX / FXML"} />
                 <SkillItem
                     text={"Spring Boot"}
                     image={{
@@ -22,6 +22,9 @@ export function TechStackSection() {
                         altText: "Java",
                     }}
                 />
+                <SkillItem text={"MapStruct"} />
+                <SkillItem text={"Lombok"} />
+                <SkillItem text={"SL4J"} />
                 <SkillItem text={"RestAPI"} />
                 <SkillItem
                     text={"Maven"}
@@ -113,6 +116,7 @@ export function TechStackSection() {
                 <SkillItem text={"Fastify"} />
                 <SkillItem text={"React"} />
                 <SkillItem text={"CSS"} />
+                <SkillItem text={"HTML"} />
                 <SkillItem text={"Bootstrap"} />
                 <SkillItem text={"SauceLabs"} />
                 <SkillItem text={"Mocha"} />
@@ -130,11 +134,13 @@ export function TechStackSection() {
                 <SkillItem text={"Selenium"} />
                 <SkillItem text={"Playwright"} />
                 <SkillItem text={"Cypress"} />
+                <SkillItem text={"Testing Library"} />
                 <SkillItem text={"Mockito"} />
                 <SkillItem text={"JUnit"} />
                 <SkillItem text={"TDD"} />
 
                 <SkillItem text={"Haskell"} />
+                <SkillItem text={"RabbitMQ"} />
 
                 <SkillItem text={"Github / Gitlab / BitBucket"} />
                 <SkillItem text={"Github Workflow"} />
@@ -142,7 +148,7 @@ export function TechStackSection() {
                 <SkillItem text={"Digital Ocean"} />
                 <SkillItem text={"GCP (Programmable Search Engine)"} />
                 <SkillItem text={"XMPP"} />
-                <SkillItem text={"Jira"} />
+                <SkillItem text={"Jira / Confluence"} />
                 <SkillItem text={"SCRUM"} />
                 <SkillItem text={"Git"} />
 
@@ -160,12 +166,16 @@ export function TechStackSection() {
                 <SkillItem text={"CLI / Bash / WSL"} />
 
                 <SkillItem text={"Python"} />
+                <SkillItem text={"SQLAlchemy"} />
+                <SkillItem text={"Virtual Env Python"} />
+                <SkillItem text={"FastAPI"} />
                 <SkillItem text={"Pandas"} />
                 <SkillItem text={"C#"} />
                 <SkillItem text={"ASP .NET Core"} />
 
                 <SkillItem text={"Electron"} />
                 <SkillItem text={"Alexa SDK"} />
+                <SkillItem text={"OpenAPI / SwaggerUI"} />
             </div>
         </section>
     );
