@@ -8,6 +8,11 @@
     display: none;
 }
 
+.desktop_wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
 @media screen and (width <= 940px) {
     .mobile_wrapper {
         display: block;
