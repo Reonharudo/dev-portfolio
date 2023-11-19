@@ -31,4 +31,6 @@
 
 .description {
     grid-area: description;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
