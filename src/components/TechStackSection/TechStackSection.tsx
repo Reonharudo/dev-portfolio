@@ -153,11 +153,16 @@ export function TechStackSection() {
                 <SkillItem text={"Windows"} />
                 <SkillItem text={"MacOS"} />
                 <SkillItem text={"Linux (Ubuntu)"} />
+                <SkillItem text={"VirtualBox"} />
+                <SkillItem text={"CLI / Bash / WSL"} />
 
                 <SkillItem text={"Python"} />
                 <SkillItem text={"Pandas"} />
                 <SkillItem text={"C#"} />
                 <SkillItem text={"ASP .NET Core"} />
+
+                <SkillItem text={"Electron"} />
+                <SkillItem text={"Alexa SDK"} />
             </div>
         </section>
     );
