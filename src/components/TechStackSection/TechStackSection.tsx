@@ -60,6 +60,7 @@ export function TechStackSection() {
                         altText: "Java",
                     }}
                 />
+                <SkillItem text={"SQL"} />
                 <SkillItem text={"Oracle Database PL/SQL"} />
                 <SkillItem text={"S3 Storage"} />
 
@@ -108,6 +109,8 @@ export function TechStackSection() {
                 />
                 <SkillItem text={"SharpJS"} />
                 <SkillItem text={"ExpressJS"} />
+                <SkillItem text={"Restify"} />
+                <SkillItem text={"Fastify"} />
                 <SkillItem text={"React"} />
                 <SkillItem text={"CSS"} />
                 <SkillItem text={"Bootstrap"} />
