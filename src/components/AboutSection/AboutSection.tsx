@@ -114,7 +114,7 @@ export function AboutSection() {
                             className={styles.btn}
                             id="show_images_about_section"
                         >
-                            Show Images
+                            Show Pictures
                         </button>
                     </div>
                 )}
