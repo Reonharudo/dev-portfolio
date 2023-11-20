@@ -1,10 +1,15 @@
 .container {
     display: grid;
-    grid-template-areas: "image" "btn_group";
+    grid-template-areas:
+        "image_desc_wrapper image_desc_wrapper"
+        "animation_btn_group image_btn_group";
+    overflow-x: hidden;
 }
 
 .image_desc_wrapper {
+    grid-area: image_desc_wrapper;
     height: 400px;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,8 +17,6 @@
 }
 
 .image {
-    grid-area: image;
-
     width: auto;
     max-width: 100%;
     height: auto;
@@ -23,8 +26,35 @@
 }
 
 .selection_btn_group {
-    grid-area: btn_group;
+    grid-area: image_btn_group;
     justify-self: flex-end;
-    display: flex;
+    display: inline-flex;
     gap: 0.3rem;
+}
+
+.btn_wrapper {
+    grid-area: animation_btn_group;
+}
+
+.play_btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.animate_slide_from_right {
+    animation: slide_from_right 1s linear;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    cursor: pointer;
+}
+
+@keyframes slide_from_right {
+    from {
+        transform: translateX(10vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
 }

@@ -63,6 +63,7 @@ export function TechStackSection() {
                         altText: "Java",
                     }}
                 />
+                <SkillItem text={"SQLite"} />
                 <SkillItem text={"SQL"} />
                 <SkillItem text={"Oracle Database PL/SQL"} />
                 <SkillItem text={"S3 Storage"} />
@@ -164,9 +165,13 @@ export function TechStackSection() {
                 <SkillItem text={"Linux (Ubuntu)"} />
                 <SkillItem text={"VirtualBox"} />
                 <SkillItem text={"CLI / Bash / WSL"} />
+                <SkillItem text={"Regex"} />
 
                 <SkillItem text={"Python"} />
                 <SkillItem text={"SQLAlchemy"} />
+                <SkillItem text={"Uvicorn"} />
+                <SkillItem text={"Pydantic"} />
+                <SkillItem text={"Pytest"} />
                 <SkillItem text={"Virtual Env Python"} />
                 <SkillItem text={"FastAPI"} />
                 <SkillItem text={"Pandas"} />

@@ -2,7 +2,7 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export interface ImageWithDescription {
     imageURL: string;
@@ -26,16 +26,37 @@ export function ImageGallery({
 
     return (
         <div className={styles.container}>
+            {/* Hero Image */}
             <div className={styles.image_desc_wrapper}>
                 <Image
+                    key={currentIndex}
                     src={images[currentIndex].imageURL}
                     alt={"project"}
-                    className={styles.image}
+                    className={`${styles.image} ${
+                        isImmutable
+                            ? undefined
+                            : styles.animate_slide_from_right
+                    }`}
                     width={1000}
                     height={600}
                 ></Image>
                 <p>{images[currentIndex].description}</p>
             </div>
+
+            {!isImmutable && (
+                <div className={styles.btn_wrapper}>
+                    <button className={styles.play_btn}>
+                        {"Pause "}
+                        <Image
+                            src={"/button-svg/stop_circle.svg"}
+                            alt={"project"}
+                            className={styles.image}
+                            width={20}
+                            height={20}
+                        ></Image>
+                    </button>
+                </div>
+            )}
 
             <div className={styles.selection_btn_group}>
                 {images.map((value, index) => (

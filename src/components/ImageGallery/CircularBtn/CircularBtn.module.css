@@ -2,7 +2,7 @@
 .btn_active {
     border: 3px solid var(--button-color-2);
     color: white;
-    padding: 0.5rem;
+    padding: 0.7rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;

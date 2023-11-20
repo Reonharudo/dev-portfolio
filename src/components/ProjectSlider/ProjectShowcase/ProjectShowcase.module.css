@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas: "image_gallery" "description";
+    grid-template-areas: "image_gallery" " description";
 
     padding: 1rem;
     padding-top: 2rem;
