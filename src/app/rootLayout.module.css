@@ -7,6 +7,13 @@
         "footer";
     flex-direction: column;
 }
+/* 2560 */
+@media (width >= 2560px) {
+    .app {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
 
 .main_content {
     grid-area: main_content;

@@ -4,7 +4,7 @@ import styles from "./TechStackSection.module.css";
 export function TechStackSection() {
     return (
         <section id="techstack">
-            <h1>Techstack</h1>
+            <h1 className={styles.headline}>Techstack</h1>
             <div className={styles.skills_view}>
                 <SkillItem
                     text={"Java"}

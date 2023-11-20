@@ -4,7 +4,7 @@ import styles from "./ContactSection.module.css";
 export function ContactSection() {
     return (
         <section id="contact">
-            <h1>Contact</h1>
+            <h1 className={styles.headline}>Contact</h1>
             <div className={styles.container}>
                 <h1 className={styles.msg}>Thank you for visiting my page!</h1>
                 <a

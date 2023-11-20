@@ -50,7 +50,7 @@ export function AboutSection() {
 
     return (
         <section id="about" className={styles.container}>
-            <h1>About me</h1>
+            <h1 className={styles.headline}>About me</h1>
             <div className={styles.content}>
                 <div className={styles.description_container}>
                     <p>Welcome on my page!</p>
