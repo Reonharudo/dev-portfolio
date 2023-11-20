@@ -2,7 +2,8 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 
 export interface ImageWithDescription {
     imageURL: string;
@@ -20,9 +21,39 @@ export function ImageGallery({
 }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+    const [isAutomaticImageSliderActive, setIsAutomaticImageSliderActice] =
+        useState<boolean>(true);
+
     if (images.length === 0) {
         return null;
     }
+
+    function slideThroughImages() {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => {
+                // Calculate the next index based on the current index
+                let nextIndex = prevIndex + 1;
+
+                // If the next index is out of bounds, reset to the first image
+                if (nextIndex >= images.length) {
+                    nextIndex = 0;
+                }
+
+                return nextIndex;
+            });
+        }, 4000);
+        return interval;
+    }
+
+    useEffect(() => {
+        if (!isImmutable && isAutomaticImageSliderActive) {
+            const interval = slideThroughImages();
+
+            return () => {
+                clearInterval(interval);
+            };
+        }
+    }, [isAutomaticImageSliderActive]);
 
     return (
         <div className={styles.container}>
@@ -45,16 +76,14 @@ export function ImageGallery({
 
             {!isImmutable && (
                 <div className={styles.btn_wrapper}>
-                    <button className={styles.play_btn}>
-                        {"Pause "}
-                        <Image
-                            src={"/button-svg/stop_circle.svg"}
-                            alt={"project"}
-                            className={styles.image}
-                            width={20}
-                            height={20}
-                        ></Image>
-                    </button>
+                    <AnimationBtn
+                        showStop={isAutomaticImageSliderActive}
+                        onClick={() =>
+                            setIsAutomaticImageSliderActice(
+                                !isAutomaticImageSliderActive
+                            )
+                        }
+                    />
                 </div>
             )}
 

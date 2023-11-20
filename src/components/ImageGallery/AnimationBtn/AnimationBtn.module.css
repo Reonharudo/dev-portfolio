@@ -1,0 +1,21 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 5rem;
+    justify-content: space-between;
+    align-items: center;
+
+    border: none;
+    border-radius: 10px;
+    padding: 0.4rem;
+
+    cursor: pointer;
+
+    background-color: rgb(183, 183, 183);
+
+    opacity: 0.7;
+}
+
+.container:hover {
+    opacity: 1;
+}

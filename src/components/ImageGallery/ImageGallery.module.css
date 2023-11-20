@@ -32,17 +32,6 @@
     gap: 0.3rem;
 }
 
-.btn_wrapper {
-    grid-area: animation_btn_group;
-}
-
-.play_btn {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    cursor: pointer;
-}
-
 .animate_slide_from_right {
     animation: slide_from_right 1s linear;
     animation-duration: 0.15s;

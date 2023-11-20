@@ -3,7 +3,6 @@ import {
     ImageGallery,
 } from "@/components/ImageGallery/ImageGallery";
 import styles from "./ProjectShowcase.module.css";
-import Image from "next/image";
 
 export interface IntProjectShowcase {
     headline: string;
