@@ -12,7 +12,7 @@ export function AboutSection() {
     function scrollToBtn() {
         btnRef.current?.scrollIntoView({
             behavior: "smooth",
-            block: "start",
+            block: "center", // Center the element in the viewport
             inline: "nearest",
         });
     }
@@ -20,7 +20,7 @@ export function AboutSection() {
     function scrollToImageGallery() {
         imageGalleryWrapper.current?.scrollIntoView({
             behavior: "smooth",
-            block: "start",
+            block: "center", // Center the element in the viewport
             inline: "nearest",
         });
     }
