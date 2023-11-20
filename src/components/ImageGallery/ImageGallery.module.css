@@ -39,9 +39,25 @@
     cursor: pointer;
 }
 
+.animate_slide_from_left {
+    animation: slide_from_left 1s linear;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    cursor: pointer;
+}
+
 @keyframes slide_from_right {
     from {
         transform: translateX(10vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes slide_from_left {
+    from {
+        transform: translateX(-10vw);
     }
     to {
         transform: translateX(0vw);

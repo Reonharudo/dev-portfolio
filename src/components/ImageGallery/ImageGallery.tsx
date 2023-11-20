@@ -2,7 +2,7 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 
 export interface ImageWithDescription {
@@ -20,6 +20,8 @@ export function ImageGallery({
     isImmutable = false,
 }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const prevIndex = useRef<number>(currentIndex);
+    const heroImageRef = useRef<HTMLImageElement | null>(null);
 
     const currentIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const [isAutomaticImageSliderActive, setIsAutomaticImageSliderActice] =
@@ -28,6 +30,18 @@ export function ImageGallery({
     if (images.length === 0) {
         return null;
     }
+
+    function getAnimationClassName() {
+        if (currentIndex > prevIndex.current) {
+            return styles.animate_slide_from_right;
+        } else if (currentIndex < prevIndex.current) {
+            return styles.animate_slide_from_left;
+        }
+    }
+
+    useEffect(() => {
+        prevIndex.current = currentIndex; //save prevIndex as useEffect() runs before the actual rendering process
+    }, [currentIndex]);
 
     function slideThroughImages() {
         const interval = setInterval(() => {
@@ -65,14 +79,11 @@ export function ImageGallery({
             {/* Hero Image */}
             <div className={styles.image_desc_wrapper}>
                 <Image
+                    ref={heroImageRef}
                     key={currentIndex}
                     src={images[currentIndex].imageURL}
                     alt={"project"}
-                    className={`${styles.image} ${
-                        isImmutable
-                            ? undefined
-                            : styles.animate_slide_from_right
-                    }`}
+                    className={`${styles.image} ${getAnimationClassName()}`}
                     width={1000}
                     height={600}
                 ></Image>
