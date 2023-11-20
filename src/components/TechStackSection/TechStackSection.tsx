@@ -126,6 +126,7 @@ export function TechStackSection() {
                 <SkillItem text={"Prisma"} />
                 <SkillItem text={"Meta Lexical"} />
                 <SkillItem text={"PM2"} />
+                <SkillItem text={"Webpack / Vite"} />
 
                 <SkillItem text={"JSON"} />
                 <SkillItem text={"XML"} />
