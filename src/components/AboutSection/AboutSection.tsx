@@ -10,25 +10,19 @@ export function AboutSection() {
     const imageGalleryWrapper = useRef<HTMLDivElement | null>(null);
 
     function scrollToBtn() {
-        const offset = 100;
         btnRef.current?.scrollIntoView({
             behavior: "smooth",
             block: "start",
             inline: "nearest",
         });
-
-        window.scrollBy(0, offset);
     }
 
     function scrollToImageGallery() {
-        const offset = 100;
         imageGalleryWrapper.current?.scrollIntoView({
             behavior: "smooth",
             block: "start",
             inline: "nearest",
         });
-
-        window.scrollBy(0, -offset);
     }
 
     function calculateAge(birthYear = 2001, birthMonth = 2, birthDay = 5) {
