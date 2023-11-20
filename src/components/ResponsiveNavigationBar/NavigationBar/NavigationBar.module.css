@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: row;
     gap: 0.8rem;
+    background-color: var(--navigation-bar-background);
+    padding: 0.2rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    border-radius: 5px;
+
+    backdrop-filter: blur(5px);
+    z-index: 1000;
 }
 
 .mobile_wrapper {
