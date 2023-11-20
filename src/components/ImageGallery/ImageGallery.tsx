@@ -2,7 +2,7 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 
 export interface ImageWithDescription {
