@@ -124,6 +124,7 @@ export function TechStackSection() {
                 <SkillItem text={"Jasmine"} />
                 <SkillItem text={"Sequelize"} />
                 <SkillItem text={"Prisma"} />
+                <SkillItem text={"Meta Lexical"} />
                 <SkillItem text={"PM2"} />
 
                 <SkillItem text={"JSON"} />
