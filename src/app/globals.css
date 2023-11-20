@@ -12,6 +12,9 @@ body {
 
     --button-color-2: #749976;
     --button-color-2--darker: #2f5530;
+
+    --primary-button: rgb(183, 183, 183, 0.7);
+    --primary-button-hover: rgb(183, 183, 183, 1);
 }
 
 html {

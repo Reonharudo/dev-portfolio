@@ -11,11 +11,9 @@
 
     cursor: pointer;
 
-    background-color: rgb(183, 183, 183);
-
-    opacity: 0.7;
+    background-color: var(--primary-button);
 }
 
 .container:hover {
-    opacity: 1;
+    background-color: var(--primary-button-hover);
 }
