@@ -31,7 +31,7 @@ export function ImageGallery({
         return null;
     }
 
-    function getAnimationClassName() {
+    function getDynamicAnimationClassNameDependingOnIndex() {
         if (currentIndex > prevIndex.current) {
             return styles.animate_slide_from_right;
         } else if (currentIndex < prevIndex.current) {
@@ -83,7 +83,9 @@ export function ImageGallery({
                     key={currentIndex}
                     src={images[currentIndex].imageURL}
                     alt={"project"}
-                    className={`${styles.image} ${getAnimationClassName()}`}
+                    className={`${
+                        styles.image
+                    } ${getDynamicAnimationClassNameDependingOnIndex()}`}
                     width={1000}
                     height={600}
                 ></Image>
