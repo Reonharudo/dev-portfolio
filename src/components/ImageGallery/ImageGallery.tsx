@@ -5,6 +5,12 @@ import styles from "./ImageGallery.module.css";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 
+enum SpawnAnimation {
+    SWIPE_FROM_LEFT,
+    SWIPE_FROM_RIGHT,
+    DEFAULT,
+}
+
 export interface ImageWithDescription {
     imageURL: string;
     description?: string;
@@ -13,15 +19,18 @@ export interface ImageWithDescription {
 interface ImageGalleryProps {
     images: ImageWithDescription[];
     isImmutable: boolean;
+    spawnAnimation: SpawnAnimation;
 }
 
 export function ImageGallery({
     images = [],
     isImmutable = false,
+    spawnAnimation = SpawnAnimation.DEFAULT,
 }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const prevIndex = useRef<number>(currentIndex);
     const heroImageRef = useRef<HTMLImageElement | null>(null);
+    const wasInitialAnimationClassNameAssigned = useRef<boolean>(false);
 
     const currentIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const [isAutomaticImageSliderActive, setIsAutomaticImageSliderActice] =
@@ -29,6 +38,21 @@ export function ImageGallery({
 
     if (images.length === 0) {
         return null;
+    }
+
+    function getInitialAnimationClassNameOnMount() {
+        if (wasInitialAnimationClassNameAssigned.current) {
+            return undefined;
+        }
+
+        switch (spawnAnimation) {
+            case SpawnAnimation.SWIPE_FROM_LEFT:
+                return styles.animate_slide_from_left;
+            case SpawnAnimation.SWIPE_FROM_RIGHT:
+                return styles.animate_slide_from_right;
+            case SpawnAnimation.DEFAULT:
+                return undefined;
+        }
     }
 
     function getDynamicAnimationClassNameDependingOnIndex() {
@@ -40,7 +64,17 @@ export function ImageGallery({
     }
 
     useEffect(() => {
-        prevIndex.current = currentIndex; //save prevIndex as useEffect() runs before the actual rendering process
+        /*
+            as currentIndex is updated, it means we can assume 
+            the initial animation has already run.
+        */
+        wasInitialAnimationClassNameAssigned.current = true;
+
+        /*
+            save prevIndex as useEffect() runs before 
+            the actual rendering process
+        */
+        prevIndex.current = currentIndex;
     }, [currentIndex]);
 
     function slideThroughImages() {
@@ -85,7 +119,7 @@ export function ImageGallery({
                     alt={"project"}
                     className={`${
                         styles.image
-                    } ${getDynamicAnimationClassNameDependingOnIndex()}`}
+                    } ${getInitialAnimationClassNameOnMount()} ${getDynamicAnimationClassNameDependingOnIndex()}`}
                     width={1000}
                     height={600}
                 ></Image>
