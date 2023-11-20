@@ -2,7 +2,7 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 
 export interface ImageWithDescription {
@@ -21,6 +21,7 @@ export function ImageGallery({
 }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+    const currentIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const [isAutomaticImageSliderActive, setIsAutomaticImageSliderActice] =
         useState<boolean>(true);
 
@@ -46,14 +47,18 @@ export function ImageGallery({
     }
 
     useEffect(() => {
+        if (currentIntervalRef.current) {
+            clearInterval(currentIntervalRef.current);
+        }
         if (!isImmutable && isAutomaticImageSliderActive) {
             const interval = slideThroughImages();
+            currentIntervalRef.current = interval;
 
             return () => {
                 clearInterval(interval);
             };
         }
-    }, [isAutomaticImageSliderActive]);
+    }, [isAutomaticImageSliderActive, currentIndex]);
 
     return (
         <div className={styles.container}>

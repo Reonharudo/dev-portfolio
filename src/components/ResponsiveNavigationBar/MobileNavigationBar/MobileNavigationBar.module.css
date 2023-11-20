@@ -10,6 +10,8 @@
     align-items: center;
     animation-name: slide_from_top;
     animation-duration: 1s;
+
+    z-index: 99;
 }
 
 @keyframes slide_from_top {
@@ -70,6 +72,8 @@
     font-size: 1.3rem;
 
     justify-self: flex-end;
+
+    cursor: pointer;
 }
 
 .close_btn:hover,
@@ -95,4 +99,6 @@
 
 .menu_icon {
     margin-top: 1rem;
+
+    cursor: pointer;
 }
