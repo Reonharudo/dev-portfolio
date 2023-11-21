@@ -40,7 +40,7 @@
     border-radius: 30px;
 }
 
-@media screen and (width <= 940px) {
+@media screen and (width <= 800px) {
     .container {
         grid-template-columns: none;
         grid-template-areas:
