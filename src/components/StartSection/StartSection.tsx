@@ -14,6 +14,7 @@ export function StartSection() {
 
             <div className={styles.avatar_image_container}>
                 <Image
+                    priority={true}
                     className={styles.avatar_image}
                     src={"/me.png"}
                     alt={"LinkedIn Logo"}
