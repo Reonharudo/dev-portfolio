@@ -26,5 +26,19 @@
                 "description": "Add Series Modal"
             }
         ]
+    },
+    {
+        "headline": "Engaku 3",
+        "description": "Lorem ipsum",
+        "images": [
+            {
+                "imageURL": "/projects/engaku/engaku_collection_list.png",
+                "description": "Das ist was tolles"
+            },
+            {
+                "imageURL": "/projects/engaku/add_series_modal.png",
+                "description": "Add Series Modal"
+            }
+        ]
     }
 ]

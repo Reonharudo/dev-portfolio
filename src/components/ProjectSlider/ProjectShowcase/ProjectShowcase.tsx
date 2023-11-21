@@ -1,6 +1,7 @@
 import {
     ImageWithDescription,
     ImageGallery,
+    SpawnAnimation,
 } from "@/components/ImageGallery/ImageGallery";
 import styles from "./ProjectShowcase.module.css";
 
@@ -9,6 +10,7 @@ export interface IntProjectShowcase {
     description: string;
     images: ImageWithDescription[];
     isImmutable?: boolean;
+    spawnAnimation?: SpawnAnimation;
 }
 
 export function ProjectShowcase({
@@ -16,14 +18,16 @@ export function ProjectShowcase({
     description,
     images,
     isImmutable = false,
+    spawnAnimation = SpawnAnimation.DEFAULT,
 }: IntProjectShowcase) {
     return (
         <div className={`${styles.background} ${styles.container}`}>
             <div className={styles.image_gallery}>
                 <ImageGallery
+                    spawnAnimation={spawnAnimation}
                     isImmutable={isImmutable}
                     images={images}
-                ></ImageGallery>
+                />
             </div>
 
             <div className={styles.description}>

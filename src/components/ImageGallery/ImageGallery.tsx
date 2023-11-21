@@ -5,7 +5,7 @@ import styles from "./ImageGallery.module.css";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 
-enum SpawnAnimation {
+export enum SpawnAnimation {
     SWIPE_FROM_LEFT,
     SWIPE_FROM_RIGHT,
     DEFAULT,
@@ -19,7 +19,7 @@ export interface ImageWithDescription {
 interface ImageGalleryProps {
     images: ImageWithDescription[];
     isImmutable: boolean;
-    spawnAnimation: SpawnAnimation;
+    spawnAnimation?: SpawnAnimation;
 }
 
 export function ImageGallery({

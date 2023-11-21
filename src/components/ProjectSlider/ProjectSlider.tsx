@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
     IntProjectShowcase,
     ProjectShowcase,
 } from "./ProjectShowcase/ProjectShowcase";
 import styles from "./ProjectSlider.module.css";
 import Image from "next/image";
+import { SpawnAnimation } from "../ImageGallery/ImageGallery";
 
 interface ProjectSliderProps {
     projects: IntProjectShowcase[];
@@ -14,10 +15,26 @@ interface ProjectSliderProps {
 
 export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const prevIndex = useRef<number>(currentIndex);
 
     if (projects.length === 0) {
         return null;
     }
+
+    useEffect(() => {
+        prevIndex.current = currentIndex;
+    }, [currentIndex]);
+
+    function getSpawnAnimation() {
+        if (currentIndex > prevIndex.current) {
+            return SpawnAnimation.SWIPE_FROM_RIGHT;
+        } else if (currentIndex < prevIndex.current) {
+            return SpawnAnimation.SWIPE_FROM_LEFT;
+        }
+
+        return SpawnAnimation.DEFAULT;
+    }
+
     const { headline, description, images } = projects[currentIndex];
 
     return (
@@ -44,6 +61,7 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
                 className={`${styles.project_showcase}  ${styles.hero_project}  ${styles.project_showcase_highlight_animation}`}
             >
                 <ProjectShowcase
+                    spawnAnimation={getSpawnAnimation()}
                     headline={headline}
                     description={description}
                     images={images}
