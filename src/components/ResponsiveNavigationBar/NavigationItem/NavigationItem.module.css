@@ -6,5 +6,5 @@
 }
 
 .link:hover {
-    border-bottom: 0.13rem solid black;
+    border-bottom: 0.13rem solid var(--font-color);
 }

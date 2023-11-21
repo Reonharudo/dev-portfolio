@@ -4,6 +4,8 @@ import "./globals.css";
 import styles from "./rootLayout.module.css";
 import { FloatingLinkBar } from "@/components/FloatingLinkBar/FloatingLinkBar";
 import { NavigationBar } from "@/components/ResponsiveNavigationBar/NavigationBar/NavigationBar";
+import { useSSRTheme } from "@/components/hooks/useSSRTheme";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,9 +18,11 @@ export default function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const theme = useSSRTheme();
+
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body data-theme={theme} className={inter.className}>
                 <div className={styles.app}>
                     <div className={styles.navigation_container}>
                         <NavigationBar />

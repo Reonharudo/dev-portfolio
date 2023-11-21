@@ -1,18 +1,12 @@
-"use client";
 import { MobileNavigationBar } from "../MobileNavigationBar/MobileNavigationBar";
 import { NavigationItem } from "../NavigationItem/NavigationItem";
 import styles from "./NavigationBar.module.css";
-import { useEffect } from "react";
+
+import { ThemeChangeBtn } from "../ThemeChangeBtn/ThemeChangeBtn";
+import { useSSRTheme } from "@/components/hooks/useSSRTheme";
 
 export function NavigationBar() {
-    function handleScroll() {
-        console.log("scrolling");
-        //document.getelementbyid and check if visible with intersection observer in the viewport
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-    }, []);
+    const theme = useSSRTheme();
 
     return (
         <nav className={styles.navigation_container}>
@@ -27,6 +21,7 @@ export function NavigationBar() {
                 <NavigationItem url={"#projects"} text={"Projects"} />
                 <NavigationItem url={"#contact"} text={"Contact"} />
             </div>
+            <ThemeChangeBtn theme={theme} />
         </nav>
     );
 }

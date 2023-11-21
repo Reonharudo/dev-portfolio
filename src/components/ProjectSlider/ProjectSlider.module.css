@@ -17,7 +17,9 @@
 .hero_project {
     position: relative;
     z-index: 1;
-    background-color: white;
+    background-color: var(--project-slider-hero-background);
+
+    border-radius: 10px;
 }
 
 .project_showcase {
