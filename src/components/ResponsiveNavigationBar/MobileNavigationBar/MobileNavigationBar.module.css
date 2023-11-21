@@ -28,10 +28,9 @@
     flex-direction: column;
     gap: 2rem;
 
-    margin-top: 1rem;
     height: 100%;
     align-items: center;
-    margin-top: 12vh;
+    margin-top: 8vh;
 
     visibility: hidden; /* Initially hidden */
     animation-name: slide_from_top_delayed; /* Use a different animation name for delayed animation */
@@ -51,19 +50,31 @@
     }
 }
 
+.theme_btn {
+    visibility: hidden; /* Initially hidden */
+    animation-name: slide_from_top_delayed; /* Use a different animation name for delayed animation */
+    animation-duration: 0.3s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
 /*
     Close Btn
 */
 .btn_container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 8vh;
+
+    gap: 2rem;
 }
 .close_btn {
     outline: none;
     border: none;
     border-radius: 10px;
     background-color: var(--background-1);
+    color: var(--font-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -101,4 +112,19 @@
     margin-top: 1rem;
 
     cursor: pointer;
+}
+
+/*
+    Close
+*/
+.icon {
+    fill: var(--font-color);
+}
+
+.menu_btn {
+    cursor: pointer;
+}
+
+.hide {
+    visibility: hidden;
 }

@@ -11,7 +11,7 @@ export function NavigationBar() {
     return (
         <nav className={styles.navigation_container}>
             <div className={styles.mobile_wrapper}>
-                <MobileNavigationBar />
+                <MobileNavigationBar theme={theme} />
             </div>
 
             <div className={styles.desktop_wrapper}>
@@ -20,8 +20,8 @@ export function NavigationBar() {
                 <NavigationItem url={"#techstack"} text={"Techstack"} />
                 <NavigationItem url={"#projects"} text={"Projects"} />
                 <NavigationItem url={"#contact"} text={"Contact"} />
+                <ThemeChangeBtn theme={theme} />
             </div>
-            <ThemeChangeBtn theme={theme} />
         </nav>
     );
 }

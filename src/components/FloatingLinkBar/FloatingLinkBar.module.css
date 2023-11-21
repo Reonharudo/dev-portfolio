@@ -18,3 +18,7 @@
 
     z-index: 2;
 }
+
+.icon {
+    fill: var(--font-color);
+}

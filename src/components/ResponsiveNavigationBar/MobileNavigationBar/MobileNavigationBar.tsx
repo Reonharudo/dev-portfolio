@@ -3,9 +3,17 @@ import { useLayoutEffect, useState } from "react";
 import styles from "./MobileNavigationBar.module.css";
 import Image from "next/image";
 import { createPortal } from "react-dom";
-import { NavigationItem } from "../NavigationItem/NavigationItem";
 import { MobileNavigationItem } from "./MobileNavigationItem/MobileNavigationItem";
-export function MobileNavigationBar() {
+import { CloseIcon } from "@/components/icons/CloseIcon";
+import { MenuIcon } from "@/components/icons/MenuIcon";
+import { ThemeChangeBtn } from "../ThemeChangeBtn/ThemeChangeBtn";
+import { Theme } from "@/components/hooks/theme";
+
+interface MobileNavigationProps {
+    theme: Theme;
+}
+
+export function MobileNavigationBar({ theme }: MobileNavigationProps) {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
     useLayoutEffect(() => {
@@ -22,16 +30,20 @@ export function MobileNavigationBar() {
                                 className={styles.close_btn}
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                             >
-                                <Image
-                                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                    src={"/close_icon.svg"}
-                                    alt={"Close"}
+                                <CloseIcon
                                     width={30}
                                     height={30}
+                                    className={styles.icon}
                                 />
                                 Close
                             </button>
+
+                            <ThemeChangeBtn
+                                className={styles.theme_btn}
+                                theme={theme}
+                            />
                         </div>
+
                         <div className={styles.link_content}>
                             <MobileNavigationItem
                                 handleClose={setIsMenuOpen}
@@ -63,13 +75,11 @@ export function MobileNavigationBar() {
                     document.body
                 )}
             {!isMenuOpen && (
-                <Image
-                    className={styles.menu_icon}
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    src={"/menu_icon.svg"}
-                    alt={"Menu Icon"}
+                <MenuIcon
+                    onClick={() => setIsMenuOpen(true)}
                     width={30}
                     height={30}
+                    className={`${styles.icon} ${styles.menu_btn}`}
                 />
             )}
         </div>
