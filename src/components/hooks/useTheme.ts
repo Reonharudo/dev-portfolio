@@ -1,8 +1,6 @@
-"use client";
-
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-export enum Theme {
+export enum ClientTheme {
     LIGHT = "light",
     DARK = "dark",
     UNKNOWN = "unknown",
@@ -14,33 +12,36 @@ export enum Theme {
  */
 function getTheme() {
     const theme = document.body.dataset.theme;
-    if (theme === Theme.LIGHT) {
-        return Theme.LIGHT;
-    } else if (theme === Theme.DARK) {
-        return Theme.DARK;
+    if (theme === ClientTheme.LIGHT) {
+        return ClientTheme.LIGHT;
+    } else if (theme === ClientTheme.DARK) {
+        return ClientTheme.DARK;
     } else {
-        return Theme.UNKNOWN; //won't happen as dataset is already definied by RootLayout in server
+        return ClientTheme.UNKNOWN; //won't happen as dataset is already definied by RootLayout in server
     }
 }
 
-export function useTheme(): [Theme, Dispatch<SetStateAction<Theme>>] {
-    const [theme, setTheme] = useState<Theme>(getTheme());
+export function useTheme(): [
+    ClientTheme,
+    Dispatch<SetStateAction<ClientTheme>>
+] {
+    const [theme, setTheme] = useState<ClientTheme>(getTheme());
 
     useEffect(() => {
-        const theme: Theme | string | null =
+        const theme: ClientTheme | string | null =
             document.body.getAttribute("data-theme");
 
         if (theme) {
-            if (theme === Theme.LIGHT) {
-                setTheme(Theme.LIGHT);
-            } else if (theme === Theme.DARK) {
-                setTheme(Theme.DARK);
+            if (theme === ClientTheme.LIGHT) {
+                setTheme(ClientTheme.LIGHT);
+            } else if (theme === ClientTheme.DARK) {
+                setTheme(ClientTheme.DARK);
             }
         }
     }, []);
 
     useEffect(() => {
-        if (theme === Theme.LIGHT || theme === Theme.DARK) {
+        if (theme === ClientTheme.LIGHT || theme === ClientTheme.DARK) {
             document.body.dataset.theme = theme;
             document.cookie = `theme=${theme}`;
         }

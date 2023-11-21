@@ -1,26 +1,26 @@
 import { cookies, headers } from "next/headers";
+import { Theme } from "./theme";
 
-export function useSSRTheme() {
+export function useSSRTheme(): Theme {
     const cookieStore = cookies();
     const themeCookie = cookieStore.get("theme");
 
     const headersList = headers();
 
-    //read more about it here: https://web.dev/articles/user-preference-media-features-headers
+    // Read more about it here: https://web.dev/articles/user-preference-media-features-headers
     const prefersColorSchemeClientHintHeader = headersList.get(
         "Sec-CH-Prefers-Color-Scheme"
     );
 
     if (prefersColorSchemeClientHintHeader) {
         console.log("lol");
-        return prefersColorSchemeClientHintHeader;
+        return prefersColorSchemeClientHintHeader as Theme;
     }
 
     // Check if a theme cookie exists
     if (themeCookie) {
-        console.log("Oh");
-        return themeCookie.value;
+        return themeCookie.value as Theme;
     }
 
-    return "light";
+    return Theme.LIGHT; // Use the enum value instead of a string
 }
