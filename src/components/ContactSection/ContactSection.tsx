@@ -1,11 +1,11 @@
-import Image from "next/image";
 import styles from "./ContactSection.module.css";
 import { MailIcon } from "../icons/MailIcon";
+import { SectionHeadline } from "../SectionHeadline/SectionHeadline";
 
 export function ContactSection() {
     return (
         <section id="contact">
-            <h1 className={styles.headline}>Contact</h1>
+            <SectionHeadline>Contact</SectionHeadline>
             <div className={styles.container}>
                 <h1 className={styles.msg}>Thank you for visiting my page!</h1>
                 <a

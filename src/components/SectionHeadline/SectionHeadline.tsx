@@ -3,12 +3,21 @@ import React, { useRef } from "react";
 import styles from "./SectionHeadline.module.css";
 import { useElemObserver } from "../hooks/useElemObserver";
 
-export function SectionHeadline({ children }: { children: React.ReactNode }) {
+export function SectionHeadline({
+    children,
+    className = "",
+}: {
+    className?: string;
+    children: React.ReactNode;
+}) {
     const headlineRef = useRef<HTMLHeadingElement | null>(null);
     const isInViewport = useElemObserver(headlineRef);
 
     return (
-        <div className={styles.background} ref={headlineRef}>
+        <div
+            className={`${styles.background} ${styles.container} ${className}`}
+            ref={headlineRef}
+        >
             <AnimatedHeadline key={`${isInViewport}`}>
                 {children}
             </AnimatedHeadline>
