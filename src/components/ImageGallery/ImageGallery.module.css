@@ -26,7 +26,7 @@
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 100%;
+    max-height: 95%;
 
     border-radius: 10px;
 }
@@ -34,8 +34,10 @@
 .selection_btn_group {
     grid-area: image_btn_group;
     justify-self: flex-end;
+
     display: inline-flex;
     gap: 0.3rem;
+    flex-wrap: wrap;
 }
 
 .animate_slide_from_right {
