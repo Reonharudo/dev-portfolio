@@ -21,7 +21,7 @@ export function FloatingLinkBar() {
                 />
             </a>
 
-            <a href="mailto:leonhard.muellauer@gmail.com">
+            <a href="mailto:leonhard.muellauer.business@gmail.com">
                 <MailIcon height={30} width={30} className={styles.icon} />
             </a>
         </div>

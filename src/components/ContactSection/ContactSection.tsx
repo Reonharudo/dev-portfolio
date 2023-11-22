@@ -9,7 +9,7 @@ export function ContactSection() {
             <div className={styles.container}>
                 <h1 className={styles.msg}>Thank you for visiting my page!</h1>
                 <a
-                    href="mailto:leonhard.muellauer@gmail.com"
+                    href="mailto:leonhard.muellauer.business@gmail.com"
                     className={styles.contact_btn}
                 >
                     <span>Contact me</span>

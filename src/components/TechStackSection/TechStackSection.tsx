@@ -16,6 +16,7 @@ export function TechStackSection() {
                 />
                 <SkillItem text={"Java Swing"} />
                 <SkillItem text={"JavaFX / FXML"} />
+                <SkillItem text={"Java Socket (Distributed System)"} />
                 <SkillItem
                     text={"Spring Boot"}
                     image={{

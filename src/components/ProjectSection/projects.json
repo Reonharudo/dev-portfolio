@@ -1,15 +1,19 @@
 [
     {
-        "headline": "Engaku",
-        "description": "Lorem ipsum",
+        "headline": "Secret Project",
+        "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features yet to be unveiled.\n\n Maintaining a level of confidentiality, I plan to launch it professionally with a structured pricing model. I am eager to discuss this project further in an interview.",
         "images": [
             {
-                "imageURL": "/projects/engaku/engaku_collection_list.png",
+                "imageURL": "/projects/secret_project/collection_list.png",
                 "description": "Dashboard"
             },
             {
-                "imageURL": "/projects/engaku/add_series_modal.png",
-                "description": "Add Series Modal"
+                "imageURL": "/projects/secret_project/collection_item_in_edit.png",
+                "description": "One list entry in edit mode."
+            },
+            {
+                "imageURL": "/projects/secret_project/add_series_modal.png",
+                "description": "Suggestion is powered by GCP Programmable Search Engine"
             }
         ]
     },
