@@ -1,0 +1,31 @@
+.background {
+    padding: 1rem;
+    background-color: var(--background-1);
+    border-radius: 10px;
+
+    height: 2rem;
+
+    overflow: hidden;
+}
+
+.headline {
+    padding: 0;
+    margin: 0;
+}
+
+.animate_fade_from_top {
+    animation-name: fade-from-top;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+@keyframes fade-from-top {
+    0% {
+        transform: translate3d(0px, -200%, 0px);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}

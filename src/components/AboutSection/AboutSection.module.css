@@ -73,9 +73,3 @@
     padding: 2rem;
     margin: 1rem;
 }
-
-.headline {
-    padding: 1rem;
-    background-color: var(--background-1);
-    border-radius: 10px;
-}

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./AboutSection.module.css";
 import { ImageGallery } from "../ImageGallery/ImageGallery";
+import { SectionHeadline } from "../SectionHeadline/SectionHeadline";
 
 export function AboutSection() {
     const [showImageGallery, setShowImageGallery] = useState<boolean>(false);
@@ -50,7 +51,7 @@ export function AboutSection() {
 
     return (
         <section id="about" className={styles.container}>
-            <h1 className={styles.headline}>About me</h1>
+            <SectionHeadline>About</SectionHeadline>
             <div className={styles.content}>
                 <div className={styles.description_container}>
                     <p>Welcome on my page!</p>
