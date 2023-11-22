@@ -22,6 +22,7 @@ body {
     --scrollbar-background-border: #505050;
 
     --font-color: #000000;
+    --font-color-2: #000000;
 
     --button-color-2: #749976;
     --button-color-2--darker: #2f5530;
@@ -46,9 +47,10 @@ body {
     --scrollbar-background-border: #3a3a3a;
 
     --font-color: rgb(216, 216, 216);
+    --font-color-2: #f0f0f0;
 
-    --button-color-2: #749976;
-    --button-color-2--darker: #2f5530;
+    --button-color-2: #4a624b;
+    --button-color-2--darker: #244124;
 
     --primary-button: rgb(183, 183, 183, 0.7);
     --primary-button-hover: rgb(183, 183, 183, 1);

@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.image_desc {
+    color: var(--font-color-2);
+}
+
 .image {
     width: auto;
     max-width: 100%;

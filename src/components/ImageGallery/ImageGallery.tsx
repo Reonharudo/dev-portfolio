@@ -123,7 +123,9 @@ export function ImageGallery({
                     width={1000}
                     height={600}
                 ></Image>
-                <p>{images[currentIndex].description}</p>
+                <p className={styles.image_desc}>
+                    {images[currentIndex].description}
+                </p>
             </div>
 
             {!isImmutable && (
