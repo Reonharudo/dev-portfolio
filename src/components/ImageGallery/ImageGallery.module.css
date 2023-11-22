@@ -4,6 +4,8 @@
         "image_desc_wrapper image_desc_wrapper"
         "animation_btn_group image_btn_group";
     overflow-x: hidden;
+
+    row-gap: 1.2rem;
 }
 
 .image_desc_wrapper {
