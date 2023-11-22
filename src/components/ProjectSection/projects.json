@@ -1,15 +1,49 @@
 [
     {
+        "headline": "Shopping Platform for Concerts",
+        "description": "Platform to buy/view tickets to concerts and with a unique, intuitive self-developed dashboard for admins.\n\nWritten in AngularJS/Spring Boot.\n\nI'm especially proud about the sophisticated editor feature that allows admins to create any hallplan they want.\nThese hallplans can then be assigned to an Event of which tickets may be sold to registered users. ",
+        "images": [
+            {
+                "imageURL": "/projects/shopping-platform/dashboard.png",
+                "description": "Start Page of the website"
+            },
+            {
+                "imageURL": "/projects/shopping-platform/account_details.png",
+                "description": "All account related information can be changed."
+            },
+            {
+                "imageURL": "/projects/shopping-platform/hallplan_manager.png",
+                "description": "One of my proudest feature: The hallplan manager."
+            },
+            {
+                "imageURL": "/projects/shopping-platform/hallplan_editor.png",
+                "description": "You can create any hallplan you want! Feature-Rich with really awesome tooling."
+            },
+            {
+                "imageURL": "/projects/shopping-platform/ticket_purchase_view.png",
+                "description": "How the ticket purchase process looks like. The editor component is now in a immutable state."
+            },
+            {
+                "imageURL": "/projects/shopping-platform/cart.png",
+                "description": "The tickets are now in the cart."
+            }
+        ]
+    },
+    {
         "headline": "Secret Project",
         "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features yet to be unveiled.\n\n Maintaining a level of confidentiality, I plan to launch it professionally with a structured pricing model. I am eager to discuss this project further in an interview.",
         "images": [
             {
                 "imageURL": "/projects/secret_project/collection_list.png",
-                "description": "Dashboard"
+                "description": "View of a list"
             },
             {
                 "imageURL": "/projects/secret_project/collection_item_in_edit.png",
                 "description": "One list entry in edit mode."
+            },
+            {
+                "imageURL": "/projects/secret_project/deletion_of_entry.png",
+                "description": "Any entry can be deleted. Notice how the border left changes its color depending on deletion or editing?"
             },
             {
                 "imageURL": "/projects/secret_project/add_series_modal.png",
@@ -18,30 +52,46 @@
         ]
     },
     {
-        "headline": "Engaku Lol",
-        "description": "Lorem ipsum",
+        "headline": "Mail Transfer Monitoring Distributed System",
+        "description": "As part of a university assignment, I designed a robust multi-threaded-system featuring Mail Servers, Transfer Servers, and a Monitoring Server components using Java Sockets.\n\nI implemented custom protocols, DMTP (Data Mail Transfer Protocol) and DMAP (Data Mail Access Protocol), to suit the project's requirements.\n\nFor efficiency considerations, I chose UDP for communication with the Monitoring Server and TCP for DMAP/DMTP.\nThis decision reflects a deliberate effort to optimize performance and reliability within the system while adhering to the project's specifications.",
         "images": [
             {
-                "imageURL": "/projects/engaku/engaku_collection_list.png",
-                "description": "Das ist was tolles"
+                "imageURL": "/projects/mail-transfer-monitoring/architecture_model.png",
+                "description": "The architecture of the system"
             },
             {
-                "imageURL": "/projects/engaku/add_series_modal.png",
-                "description": "Add Series Modal"
+                "imageURL": "/projects/mail-transfer-monitoring/communication.png",
+                "description": "Two Mail Servers, one Transfer Server and one Client communicating with each other."
             }
         ]
     },
     {
-        "headline": "Engaku 3",
-        "description": "Lorem ipsum",
+        "headline": "Spin2Time - Time Tracking Software",
+        "description": "Developed a time tracking software that can be used with the Alexa Amazon Assistant.\n\n Please have a look at the pictures, I think they will show you how the system was designed.",
         "images": [
             {
-                "imageURL": "/projects/engaku/engaku_collection_list.png",
-                "description": "Das ist was tolles"
+                "imageURL": "/projects/spin2time/architecture.png",
+                "description": "The architecture of the system"
             },
             {
-                "imageURL": "/projects/engaku/add_series_modal.png",
-                "description": "Add Series Modal"
+                "imageURL": "/projects/spin2time/dashboard.png",
+                "description": "Dashboard"
+            },
+            {
+                "imageURL": "/projects/spin2time/meta_goal.png",
+                "description": "Goal of Spin2Time"
+            },
+            {
+                "imageURL": "/projects/spin2time/statistics.png",
+                "description": "View of how much time was spend on a project."
+            },
+            {
+                "imageURL": "/projects/spin2time/techstack.png",
+                "description": "Techstack of Spin2Time"
+            },
+            {
+                "imageURL": "/projects/spin2time/time_tracking_entries.png",
+                "description": "Time Trackings initiated by Alexa / Desktop Application"
             }
         ]
     }
