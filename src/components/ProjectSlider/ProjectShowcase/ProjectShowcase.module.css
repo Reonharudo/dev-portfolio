@@ -34,3 +34,7 @@
     text-wrap: nowrap;
     text-overflow: ellipsis;
 }
+
+.immutable {
+    user-select: none;
+}

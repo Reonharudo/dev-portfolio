@@ -21,7 +21,11 @@ export function ProjectShowcase({
     spawnAnimation = SpawnAnimation.DEFAULT,
 }: IntProjectShowcase) {
     return (
-        <div className={`${styles.background} ${styles.container}`}>
+        <div
+            className={`${styles.background} ${styles.container} ${
+                isImmutable ? styles.immutable : ""
+            }`}
+        >
             <div className={styles.image_gallery}>
                 <ImageGallery
                     spawnAnimation={spawnAnimation}
