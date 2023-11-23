@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 63vh;
+}
+
+.msg {
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.contact_btn {
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.3rem;
+    border-radius: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+
+    color: var(--font-color);
+    text-decoration: none;
+
+    /* Add initial border styles */
+    border: 3px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    /* Add animation for continuous color change */
+    animation: borderAnimation 2s infinite alternate;
+
+    background-color: rgba(243, 243, 243, 0.2);
+}
+
+.contact_btn:hover {
+    animation: borderAnimationOnHover 1s infinite alternate;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: rgb(188, 188, 188);
+    }
+    100% {
+        border-color: rgb(20, 14, 98);
+    }
+}
+
+@keyframes borderAnimationOnHover {
+    0% {
+        border-color: rgb(98, 104, 222);
+    }
+    100% {
+        border-color: rgb(20, 14, 98);
+    }
+}
+
+.icon {
+    fill: var(--font-color);
+}

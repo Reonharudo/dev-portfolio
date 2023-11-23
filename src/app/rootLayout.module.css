@@ -1,0 +1,36 @@
+.app {
+    padding: 2rem;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main_content"
+        "footer";
+    flex-direction: column;
+}
+/* 2560 */
+@media (width >= 2560px) {
+    .app {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.main_content {
+    grid-area: main_content;
+}
+
+.navigation_container {
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+
+    position: sticky;
+    top: 10px;
+
+    z-index: 100;
+}
+
+.footer {
+    grid-area: footer;
+    margin-top: 4rem;
+}
