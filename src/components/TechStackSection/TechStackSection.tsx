@@ -146,7 +146,6 @@ export function TechStackSection() {
                 <SkillItem text={"TDD"} />
 
                 <SkillItem text={"Haskell"} />
-                <SkillItem text={"RabbitMQ"} />
 
                 <SkillItem text={"Github / Gitlab / BitBucket"} />
                 <SkillItem text={"Github Workflow"} />
@@ -186,6 +185,7 @@ export function TechStackSection() {
                 <SkillItem text={"Electron"} />
                 <SkillItem text={"Alexa SDK"} />
                 <SkillItem text={"OpenAPI / SwaggerUI"} />
+                <SkillItem text={"Kotlin"} />
             </div>
         </section>
     );

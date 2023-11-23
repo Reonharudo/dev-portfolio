@@ -11,6 +11,10 @@
     border-radius: 50%;
     background-color: transparent;
 }
+.btn_inactive:focus,
+.btn_active:focus {
+    outline: none; /* Remove the default focus outline (use with caution for accessibility) */
+}
 
 .btn_inactive:hover:enabled {
     border: 3px solid var(--button-color-2--darker);
