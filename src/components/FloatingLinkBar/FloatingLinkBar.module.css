@@ -1,0 +1,24 @@
+.container {
+    display: inline-flex;
+    position: fixed;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 10px;
+    flex-direction: row;
+    gap: 1rem;
+    bottom: 0.5rem;
+
+    box-shadow: 0px 0px 7px 0px var(--floating-link-bar-background);
+    -webkit-box-shadow: 0px 0px 7px 0px var(--floating-link-bar-background);
+    -moz-box-shadow: 0px 0px 7px 0px var(--floating-link-bar-background);
+
+    background-color: var(--navigation-bar-background);
+    backdrop-filter: blur(10px);
+
+    z-index: 2;
+}
+
+.icon {
+    fill: var(--font-color);
+}

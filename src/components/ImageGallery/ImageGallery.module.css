@@ -1,0 +1,73 @@
+.container {
+    display: grid;
+    grid-template-areas:
+        "image_desc_wrapper image_desc_wrapper"
+        "animation_btn_group image_btn_group";
+    overflow-x: hidden;
+
+    row-gap: 1.2rem;
+}
+
+.image_desc_wrapper {
+    grid-area: image_desc_wrapper;
+    height: 400px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_desc {
+    color: var(--font-color-2);
+}
+
+.image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 95%;
+
+    border-radius: 10px;
+}
+
+.selection_btn_group {
+    grid-area: image_btn_group;
+    justify-self: flex-end;
+
+    display: inline-flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.animate_slide_from_right {
+    animation: slide_from_right 1s linear;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    cursor: pointer;
+}
+
+.animate_slide_from_left {
+    animation: slide_from_left 1s linear;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    cursor: pointer;
+}
+
+@keyframes slide_from_right {
+    from {
+        transform: translateX(10vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes slide_from_left {
+    from {
+        transform: translateX(-10vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}

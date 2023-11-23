@@ -1,0 +1,114 @@
+.container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 70%) minmax(0, 1fr);
+    grid-template-areas: "prev_btn project_showcase next_btn";
+    grid-column-gap: 10px;
+}
+
+/*
+    Hero Project
+*/
+.project_showcase_highlight_animation {
+    animation-name: increase_to_full_visbility; /* Use a different animation name for delayed animation */
+    animation-duration: 2s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+.hero_project {
+    position: relative;
+    z-index: 1;
+    background-color: var(--project-slider-hero-background);
+
+    border-radius: 10px;
+}
+
+.project_showcase {
+    grid-area: project_showcase;
+}
+
+/*
+    Previous and After Button Area
+*/
+
+.btn_container_prev {
+    grid-area: prev_btn;
+}
+
+.btn_container_next {
+    grid-area: next_btn;
+}
+
+.next_btn,
+.prev_btn {
+    background-color: rgb(201, 201, 201);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_desc_container {
+    display: inline-flex;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column-reverse;
+}
+
+.tooltip {
+    position: absolute;
+    margin-bottom: 2rem;
+
+    display: none;
+}
+
+.btn_desc_container {
+    position: relative;
+}
+
+.next_btn:hover + .tooltip {
+    display: block;
+}
+
+.prev_btn:hover + .tooltip {
+    display: block;
+}
+
+.inactive_item_blurry {
+    animation-name: slowly_decrease_opacity; /* Use a different animation name for delayed animation */
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+.inactive_item_blurry:hover {
+    animation-name: slowly_increase_opacity; /* Use a different animation name for delayed animation */
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    cursor: pointer;
+}
+
+@keyframes slowly_increase_opacity {
+    from {
+        opacity: 0.25; /* Initially hidden */
+    }
+    to {
+        opacity: 0.65;
+    }
+}
+
+@keyframes slowly_decrease_opacity {
+    from {
+        opacity: 0.65; /* Initially hidden */
+    }
+    to {
+        opacity: 0.25;
+    }
+}
+
+@keyframes increase_to_full_visbility {
+    from {
+        opacity: 0.65; /* Initially hidden */
+    }
+    to {
+        opacity: 1;
+    }
+}

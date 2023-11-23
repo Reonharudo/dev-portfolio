@@ -1,0 +1,22 @@
+.btn_inactive,
+.btn_active {
+    border: 3px solid var(--button-color-2);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.btn_inactive:hover:enabled {
+    border: 3px solid var(--button-color-2--darker);
+}
+
+.btn_active {
+    background-color: var(--button-color-2);
+    cursor: default;
+}

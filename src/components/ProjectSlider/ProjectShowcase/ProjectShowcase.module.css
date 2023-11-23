@@ -1,0 +1,69 @@
+.container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 30rem) minmax(0, 13rem);
+    grid-template-areas: "image_gallery" "description";
+
+    padding: 1rem;
+    padding-top: 2rem;
+
+    row-gap: 0.8rem;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.background {
+    background: linear-gradient(
+        180deg,
+        rgba(69, 69, 68, 0.37) 0%,
+        rgba(200, 209, 152, 0.568) 49.48%,
+        rgba(69, 69, 68, 0.17) 100%
+    );
+
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+.image_gallery {
+    grid-area: image_gallery;
+}
+
+.description_container {
+    grid-area: description;
+
+    display: flex;
+    flex-direction: column;
+    text-wrap: wrap;
+    text-overflow: ellipsis;
+    white-space: break-spaces;
+}
+
+.description {
+    overflow-x: auto;
+
+    margin: 0;
+    padding: 0;
+}
+
+.immutable {
+    user-select: none;
+}
+
+.description::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--scrollbar-background);
+}
+
+.description::-webkit-scrollbar {
+    width: 0.3rem;
+    background-color: var(--scrollbar-background);
+}
+
+.description::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-background-thumb);
+    border: 2px solid var(--scrollbar-background-border);
+}

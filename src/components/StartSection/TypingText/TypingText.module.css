@@ -1,0 +1,19 @@
+.headline {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+
+    height: 5rem;
+}
+
+.animated_caret {
+    border-right: 0.13rem solid var(--font-color);
+    animation: caret 1s steps(1) infinite;
+    margin-left: 0.65rem;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
