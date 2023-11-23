@@ -75,7 +75,7 @@ export function AboutSection() {
                         >
                             pictures.
                         </span>{" "}
-                        I'm currently planning to build a new rig with the
+                        I&apos;m currently planning to build a new rig with the
                         upcoming Zen5 CPU (maybe 3D-VCache) so that I can
                         finally upgrade to 32GB DDDR5 Ram. :)
                         <br />
@@ -84,7 +84,7 @@ export function AboutSection() {
                         articles spanning topics from medical science to
                         philosophical or history, maintaining them as valuable
                         references. I have huge folders containing all the links
-                        in my Dropbox. It's my go-to source for a bit of
+                        in my Dropbox. It&apos;s my go-to source for a bit of
                         everything.
                     </p>
                     <p>Leonhard Muellauer</p>
@@ -106,7 +106,7 @@ export function AboutSection() {
                                 {
                                     imageURL: "/about-me/pc_building.jpeg",
                                     description:
-                                        "My current pc. I'm planning to get a Fractal Torrent Case soon.",
+                                        "My current pc. I&apos;m planning to get a Fractal Torrent Case soon.",
                                 },
                                 {
                                     imageURL: "/about-me/some_hardware.png",
