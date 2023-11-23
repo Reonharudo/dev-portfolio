@@ -1,7 +1,7 @@
 .container {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 100%);
     grid-template-rows: minmax(0, 30rem) minmax(0, 13rem);
     grid-template-areas: "image_gallery" "description";
 
@@ -43,7 +43,8 @@
 }
 
 .description {
-    overflow-x: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     margin: 0;
     padding: 0;
