@@ -1,28 +1,38 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
 interface SectionProps {
-    id: string,
-    text: string,
-    handleWhenVisibleInViewport: () => any
+    id: string;
+    text: string;
+    handleWhenVisibleInViewport: () => any;
 }
 
 export function Section({
     id,
     text,
-    handleWhenVisibleInViewport
+    handleWhenVisibleInViewport,
 }: SectionProps) {
-    const sectionRef = useRef<HTMLElement | null>(null)
-
-    const observer = new IntersectionObserver(handleWhenVisibleInViewport, { rootMargin: "0px", threshold: 1 });
+    const sectionRef = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current)
+        const node = sectionRef.current;
+        if (!node) {
+            return;
         }
-    }, [handleWhenVisibleInViewport])
 
+        const observer = new IntersectionObserver(handleWhenVisibleInViewport, {
+            rootMargin: "0px",
+            threshold: 1,
+        });
+        observer.observe(node);
 
-    return <section id={id} ref={sectionRef}>
-        {text}
-    </section>
+        return () => {
+            observer.disconnect();
+        };
+    }, [handleWhenVisibleInViewport]);
+
+    return (
+        <section id={id} ref={sectionRef}>
+            {text}
+        </section>
+    );
 }
