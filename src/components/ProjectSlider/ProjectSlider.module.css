@@ -20,7 +20,7 @@
 
 @media screen and (width <= 550px) {
     .container {
-        grid-template-columns: minmax(0, 20%) minmax(0, 60%) minmax(0, 20%);
+        grid-template-columns: minmax(0, 15%) minmax(0, 50%) minmax(0, 15%);
     }
 }
 
