@@ -7,11 +7,17 @@
         "footer";
     flex-direction: column;
 }
-/* 2560 */
+
 @media (width >= 2560px) {
     .app {
         width: 50%;
         margin: 0 auto;
+    }
+}
+
+@media (width <= 600px) {
+    .app {
+        padding: 0.8rem;
     }
 }
 

@@ -1,5 +1,6 @@
 .container {
     display: grid;
+    grid-template-rows: minmax(0, 100%);
     grid-template-columns: minmax(0, 15%) minmax(0, 65%) minmax(10%, 15%);
     grid-template-areas: "prev_btn project_showcase next_btn";
     grid-column-gap: 0.1rem;
