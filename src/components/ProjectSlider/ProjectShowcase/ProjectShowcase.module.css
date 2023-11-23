@@ -66,4 +66,6 @@
 .description::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-background-thumb);
     border: 2px solid var(--scrollbar-background-border);
+
+    border-radius: 10px;
 }

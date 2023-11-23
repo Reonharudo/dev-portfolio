@@ -2,8 +2,9 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
+import { off } from "process";
 
 export enum SpawnAnimation {
     SWIPE_FROM_LEFT,
@@ -35,6 +36,8 @@ export function ImageGallery({
     const currentIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const [isAutomaticImageSliderActive, setIsAutomaticImageSliderActice] =
         useState<boolean>(true);
+
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
     if (images.length === 0) {
         return null;
@@ -94,6 +97,16 @@ export function ImageGallery({
         return interval;
     }
 
+    function scrollToElement(buttonElem: HTMLButtonElement | null) {
+        buttonElem?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+        });
+
+        console.log(buttonElem, buttonElem?.getBoundingClientRect());
+    }
+
     useEffect(() => {
         if (currentIntervalRef.current) {
             clearInterval(currentIntervalRef.current);
@@ -141,14 +154,17 @@ export function ImageGallery({
                 </div>
             )}
 
-            <div className={styles.selection_btn_group}>
-                {images.map((value, index) => (
-                    <CircularBtn
-                        disable={isImmutable}
-                        key={index}
-                        isActive={index === currentIndex}
-                        handleClick={() => setCurrentIndex(index)}
-                    />
+            <div className={styles.selection_btn_group} ref={containerRef}>
+                {images.map((_value, index) => (
+                    <div className={styles.btn_carousel_item}>
+                        <CircularBtn
+                            handleOnActive={scrollToElement}
+                            disable={isImmutable}
+                            key={index}
+                            isActive={index === currentIndex}
+                            handleClick={() => setCurrentIndex(index)}
+                        />
+                    </div>
                 ))}
             </div>
         </div>

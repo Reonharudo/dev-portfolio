@@ -1,8 +1,10 @@
 .container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 70%) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 11%) minmax(0, 62%) minmax(0, 11%);
     grid-template-areas: "prev_btn project_showcase next_btn";
     grid-column-gap: 10px;
+
+    justify-content: center;
 }
 
 /*
