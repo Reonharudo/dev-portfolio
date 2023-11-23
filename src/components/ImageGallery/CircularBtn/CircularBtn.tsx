@@ -20,7 +20,7 @@ export function CircularBtn({
         if (isActive) {
             handleOnActive(buttonRef.current);
         }
-    }, [isActive]);
+    }, [isActive, handleOnActive]);
 
     return (
         <button
