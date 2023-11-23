@@ -98,10 +98,26 @@ export function ImageGallery({
     }
 
     function scrollToElement(buttonElem: HTMLButtonElement | null) {
-        buttonElem?.scrollIntoView({
+        /*
+        Unfortunately this solves the intended expectation, but causes a jiggle effect: 
+
+             buttonElem?.scrollIntoView({
             behavior: "smooth",
             block: "nearest",
             inline: "center",
+        });
+
+        Therefore I implemented this approach:
+        */
+        /* Now simulate minimal sliding effect  */
+        containerRef.current?.scrollBy({
+            behavior: "smooth",
+            left: 5,
+        });
+        buttonElem?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "nearest" /* This jiggle effect is caused by 'center' therefore we use nearest */,
         });
 
         console.log(buttonElem, buttonElem?.getBoundingClientRect());
