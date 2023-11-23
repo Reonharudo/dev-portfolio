@@ -1,14 +1,13 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./TypingText.module.css";
 
 export function TypingText() {
     const [typedText, setTypedText] = useState<string>("");
 
-    async function startAnimation() {
+    const startAnimation = useCallback(async () => {
         const endText = "Hi, I am Leonhard Muellauer ";
 
-        console.log("starting");
         let currentProgress = "";
 
         for (let i = 0; i < endText.length; i++) {
@@ -17,7 +16,7 @@ export function TypingText() {
             currentProgress += endText.charAt(i);
             setTypedText(currentProgress);
         }
-    }
+    }, []);
 
     async function sleepForMS(ms: number) {
         return new Promise((resolve) => setTimeout(resolve, ms));
@@ -25,7 +24,7 @@ export function TypingText() {
 
     useEffect(() => {
         startAnimation();
-    }, []);
+    }, [startAnimation]);
 
     return (
         <div>
