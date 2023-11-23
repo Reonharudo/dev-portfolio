@@ -73,15 +73,20 @@ export function AboutSection() {
                             className={styles.inline_btn}
                             onClick={scrollToBtn}
                         >
-                            pictures
+                            pictures.
                         </span>{" "}
-                        :) <br />
+                        I'm currently planning to build a new rig with the
+                        upcoming Zen5 CPU (maybe 3D-VCache) so that I can
+                        finally upgrade to 32GB DDDR5 Ram. :)
+                        <br />
+                        <br />
                         Additionally, I actively collect and peruse Wikipedia
                         articles spanning topics from medical science to
                         philosophical or history, maintaining them as valuable
-                        references.
+                        references. I have huge folders containing all the links
+                        in my Dropbox. It's my go-to source for a bit of
+                        everything.
                     </p>
-                    <p>Thank you for reading!</p>
                     <p>Leonhard Muellauer</p>
                 </div>
 
@@ -99,8 +104,12 @@ export function AboutSection() {
                         <ImageGallery
                             images={[
                                 {
-                                    imageURL:
-                                        "/projects/engaku/add_series_modal.png",
+                                    imageURL: "/about-me/pc_building.jpeg",
+                                    description:
+                                        "My current pc. I'm planning to get a Fractal Torrent Case soon.",
+                                },
+                                {
+                                    imageURL: "/about-me/some_hardware.png",
                                 },
                             ]}
                             isImmutable={false}

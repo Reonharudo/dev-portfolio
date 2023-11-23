@@ -115,7 +115,7 @@ export function ImageGallery({
     }
 
     function scrollToElement(buttonElem: HTMLButtonElement | null) {
-        // Check if container is in viewport using Intersection Observer
+        // Check if container is in viewport
         const isContainerInViewport = () => {
             const container = containerRef.current;
             if (!container) {
@@ -146,8 +146,6 @@ export function ImageGallery({
                 block: "nearest",
                 inline: "nearest",
             });
-
-            console.log(buttonElem, buttonElem?.getBoundingClientRect());
         }
     }
 
@@ -200,7 +198,7 @@ export function ImageGallery({
 
             <div className={styles.selection_btn_group} ref={containerRef}>
                 {images.map((_value, index) => (
-                    <div className={styles.btn_carousel_item}>
+                    <div className={styles.btn_carousel_item} key={index}>
                         <CircularBtn
                             handleOnActive={scrollToElement}
                             disable={isImmutable}
