@@ -17,13 +17,13 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const prevIndex = useRef<number>(currentIndex);
 
-    if (projects.length === 0) {
-        return null;
-    }
-
     useEffect(() => {
         prevIndex.current = currentIndex;
     }, [currentIndex]);
+
+    if (projects.length === 0) {
+        return null;
+    }
 
     function getSpawnAnimation() {
         if (currentIndex > prevIndex.current) {
