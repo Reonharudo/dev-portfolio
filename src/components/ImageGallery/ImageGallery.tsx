@@ -2,7 +2,7 @@
 import { CircularBtn } from "./CircularBtn/CircularBtn";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
 import { off } from "process";
 
@@ -39,10 +39,59 @@ export function ImageGallery({
 
     const containerRef = useRef<HTMLDivElement | null>(null);
 
+    const slideThroughImagesAutomatic = useCallback(() => {
+        if (!isImmutable) {
+            //clear prev interval
+            clearPrevInterval();
+
+            //set new interval
+            const interval = setInterval(() => {
+                setCurrentIndex((prevIndex) => {
+                    // Calculate the next index based on the current index
+                    let nextIndex = prevIndex + 1;
+
+                    // If the next index is out of bounds, reset to the first image
+                    if (nextIndex >= images.length) {
+                        nextIndex = 0;
+                    }
+
+                    return nextIndex;
+                });
+            }, 4000);
+
+            currentIntervalRef.current = interval;
+        }
+    }, [isImmutable, images]);
+
+    useEffect(() => {
+        slideThroughImagesAutomatic();
+    }, [isImmutable, slideThroughImagesAutomatic]);
+
+    useEffect(() => {
+        /*
+            as currentIndex is updated, it means we can assume 
+            the initial animation has already run.
+        */
+        wasInitialAnimationClassNameAssigned.current = true;
+
+        /*
+            save prevIndex as useEffect() runs before 
+            the actual rendering process due to ref not being mutated during
+            rendering processes
+        */
+        prevIndex.current = currentIndex;
+    }, [currentIndex]);
+
     if (images.length === 0) {
         return null;
     }
 
+    /**
+     * Returns animation CSS classname after mount [] otherwise
+     * undefinied is returned
+     *
+     * @returns css classname or undefinied
+     */
     function getInitialAnimationClassNameOnMount() {
         if (wasInitialAnimationClassNameAssigned.current) {
             return undefined;
@@ -66,35 +115,10 @@ export function ImageGallery({
         }
     }
 
-    useEffect(() => {
-        /*
-            as currentIndex is updated, it means we can assume 
-            the initial animation has already run.
-        */
-        wasInitialAnimationClassNameAssigned.current = true;
-
-        /*
-            save prevIndex as useEffect() runs before 
-            the actual rendering process
-        */
-        prevIndex.current = currentIndex;
-    }, [currentIndex]);
-
-    function slideThroughImages() {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => {
-                // Calculate the next index based on the current index
-                let nextIndex = prevIndex + 1;
-
-                // If the next index is out of bounds, reset to the first image
-                if (nextIndex >= images.length) {
-                    nextIndex = 0;
-                }
-
-                return nextIndex;
-            });
-        }, 4000);
-        return interval;
+    function clearPrevInterval() {
+        if (currentIntervalRef.current) {
+            clearInterval(currentIntervalRef.current);
+        }
     }
 
     function scrollToElement(buttonElem: HTMLButtonElement | null) {
@@ -132,19 +156,12 @@ export function ImageGallery({
         }
     }
 
-    useEffect(() => {
-        if (currentIntervalRef.current) {
-            clearInterval(currentIntervalRef.current);
-        }
-        if (!isImmutable && isAutomaticImageSliderActive) {
-            const interval = slideThroughImages();
-            currentIntervalRef.current = interval;
+    function handleManualSlideThroughImage(newCurrentIndex: number) {
+        //clear prev interval
+        clearPrevInterval();
 
-            return () => {
-                clearInterval(interval);
-            };
-        }
-    }, [isAutomaticImageSliderActive, currentIndex]);
+        setCurrentIndex(newCurrentIndex);
+    }
 
     return (
         <div className={styles.container}>
@@ -187,7 +204,9 @@ export function ImageGallery({
                             disable={isImmutable}
                             key={index}
                             isActive={index === currentIndex}
-                            handleClick={() => setCurrentIndex(index)}
+                            handleClick={() =>
+                                handleManualSlideThroughImage(index)
+                            }
                         />
                     </div>
                 ))}
