@@ -97,30 +97,58 @@ export function ImageGallery({
         return interval;
     }
 
+    function isElementInViewport(elem: HTMLElement) {
+        const rect = elem.getBoundingClientRect();
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+                (window.innerHeight ||
+                    document.documentElement
+                        .clientHeight) /* or $(window).height() */ &&
+            rect.right <=
+                (window.innerWidth ||
+                    document.documentElement
+                        .clientWidth) /* or $(window).width() */
+        );
+    }
+
     function scrollToElement(buttonElem: HTMLButtonElement | null) {
-        /*
-        Unfortunately this solves the intended expectation, but causes a jiggle effect: 
+        // Check if container is in viewport using Intersection Observer
+        const isContainerInViewport = () => {
+            const container = containerRef.current;
+            if (!container) {
+                return false;
+            }
 
-             buttonElem?.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
-        });
+            const containerRect = container.getBoundingClientRect();
+            return (
+                containerRect.top >= 0 &&
+                containerRect.left >= 0 &&
+                containerRect.bottom <=
+                    (window.innerHeight ||
+                        document.documentElement.clientHeight) &&
+                containerRect.right <=
+                    (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
 
-        Therefore I implemented this approach:
-        */
-        /* Now simulate minimal sliding effect  */
-        containerRef.current?.scrollBy({
-            behavior: "smooth",
-            left: 5,
-        });
-        buttonElem?.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "nearest" /* This jiggle effect is caused by 'center' therefore we use nearest */,
-        });
+        if (isContainerInViewport()) {
+            /* Now simulate minimal sliding effect */
+            containerRef.current?.scrollBy({
+                behavior: "smooth",
+                left: 5,
+            });
 
-        console.log(buttonElem, buttonElem?.getBoundingClientRect());
+            buttonElem?.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "nearest",
+            });
+
+            console.log(buttonElem, buttonElem?.getBoundingClientRect());
+        }
     }
 
     useEffect(() => {
