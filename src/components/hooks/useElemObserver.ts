@@ -16,18 +16,18 @@ export function useElemObserver(elemRef: MutableRefObject<HTMLElement | null>) {
             threshold: 0,
         };
 
-        const observer = new IntersectionObserver(handleIntersection, options);
-
-        if (elemRef.current) {
-            observer.observe(elemRef.current);
+        const node = elemRef.current;
+        if (!node) {
+            return;
         }
 
+        const observer = new IntersectionObserver(handleIntersection, options);
+        observer.observe(node);
+
         return () => {
-            if (elemRef.current) {
-                observer.unobserve(elemRef.current);
-            }
+            observer.disconnect();
         };
-    }, []);
+    }, [elemRef]);
 
     return isInViewport;
 }
