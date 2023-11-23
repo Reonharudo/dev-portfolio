@@ -97,23 +97,6 @@ export function ImageGallery({
         return interval;
     }
 
-    function isElementInViewport(elem: HTMLElement) {
-        const rect = elem.getBoundingClientRect();
-
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <=
-                (window.innerHeight ||
-                    document.documentElement
-                        .clientHeight) /* or $(window).height() */ &&
-            rect.right <=
-                (window.innerWidth ||
-                    document.documentElement
-                        .clientWidth) /* or $(window).width() */
-        );
-    }
-
     function scrollToElement(buttonElem: HTMLButtonElement | null) {
         // Check if container is in viewport
         const isContainerInViewport = () => {
