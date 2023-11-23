@@ -52,6 +52,32 @@
         ]
     },
     {
+        "headline": "WYSIWYG Editor",
+        "description": "The development journey for this was extremly satisfying, challinging and interesting.\n\nIt uses a basic contenteditable html element and under the hood I'm using NextJS (React) and Meta's new library Lexical.\nI'm using it since it released on the canary alpha channel with no documentation. So I always (still do) look through the source code to understand how to utilize the library.\n\nThe image is streamed to the backend, the backend streams the chunks it receives immediatetely to the S3 Storage.\nThanks to that this is really efficiently solved, resulting in a much lower RAM utilization on the BE. ",
+        "images": [
+            {
+                "imageURL": "/projects/wysiwyg-editor/example.png",
+                "description": "The editor. Image is uploaded on a S3 Storage"
+            },
+            {
+                "imageURL": "/projects/wysiwyg-editor/delete_process_draft.jpg",
+                "description": "My sketch on how to implement deletion of images."
+            },
+            {
+                "imageURL": "/projects/wysiwyg-editor/different_formats.png",
+                "description": "Text can have many different formats"
+            },
+            {
+                "imageURL": "/projects/wysiwyg-editor/components_example.png",
+                "description": "Build-in To-Do-Lists."
+            },
+            {
+                "imageURL": "/projects/wysiwyg-editor/database_model.png",
+                "description": "The underlying database model."
+            }
+        ]
+    },
+    {
         "headline": "Mail Transfer Monitoring Distributed System",
         "description": "As part of a university assignment, I designed a robust multi-threaded-system featuring Mail Servers, Transfer Servers, and a Monitoring Server components using Java Sockets.\n\nI implemented custom protocols, DMTP (Data Mail Transfer Protocol) and DMAP (Data Mail Access Protocol), to suit the project's requirements.\n\nFor efficiency considerations, I chose UDP for communication with the Monitoring Server and TCP for DMAP/DMTP.\nThis decision reflects a deliberate effort to optimize performance and reliability within the system while adhering to the project's specifications.",
         "images": [
@@ -62,6 +88,28 @@
             {
                 "imageURL": "/projects/mail-transfer-monitoring/communication.png",
                 "description": "Two Mail Servers, one Transfer Server and one Client communicating with each other."
+            }
+        ]
+    },
+    {
+        "headline": "Animal Ownership Platform",
+        "description": "A platform that manages horses of owners. Further you can edit information and see the ancestry of each horse.\n\nThe family tree was interesting to implement. Utilizing a recursive SQL Query and a recursive approach to render components efficiently, the endresult is quite satisfying.\n\n Developed it with Spring Boot BE and Angular FE.",
+        "images": [
+            {
+                "imageURL": "/projects/animal-ownership-platform/dashboard.png",
+                "description": "Start Page"
+            },
+            {
+                "imageURL": "/projects/animal-ownership-platform/recursive_representation_familytree.png",
+                "description": "Interesting recursive problem"
+            },
+            {
+                "imageURL": "/projects/animal-ownership-platform/deletion.png",
+                "description": "Deletion of horses. Having to account for Cascading etc."
+            },
+            {
+                "imageURL": "/projects/animal-ownership-platform/autocomplete_edit.png",
+                "description": "Auto-Completion that searches for potential mothers and fathers (age, sex etc)"
             }
         ]
     },
@@ -92,6 +140,20 @@
             {
                 "imageURL": "/projects/spin2time/time_tracking_entries.png",
                 "description": "Time Trackings initiated by Alexa / Desktop Application"
+            }
+        ]
+    },
+    {
+        "headline": "My Portfolio",
+        "description": "Thank you that you have come this far! :)\n\nI hope you noticed a lot of a details on this page, e.g the animations on this Project Showcase Slider. Like how it slides from left / right, the responsive design, the animated Headline, the blur, the mobile navigation etc.\n\nThis portfolio is just using NextJS - CSS/Structure/Components are 100% made by me :)\nThe combination of SSR and Client Components is the icing on the cake.",
+        "images": [
+            {
+                "imageURL": "/projects/dev-portfolio/startpage.png",
+                "description": "Start Page"
+            },
+            {
+                "imageURL": "/projects/dev-portfolio/startpage_dark.png",
+                "description": "Whenever there is a dark mode, I will for sure use it."
             }
         ]
     }
