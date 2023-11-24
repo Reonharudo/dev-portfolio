@@ -29,6 +29,9 @@
     height: 100%;
 
     column-gap: 1rem;
+
+    justify-content: flex-end;
+    align-items: flex-end;
     grid-template-areas: "btn_wrapper image_btn_group";
 }
 

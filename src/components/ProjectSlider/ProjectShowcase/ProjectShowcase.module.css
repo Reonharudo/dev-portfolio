@@ -71,6 +71,8 @@
 .description_container h1 {
     margin: 0;
     padding: 0;
+
+    height: 2rem;
 }
 
 @media screen and (width <= 600px) {
@@ -82,6 +84,15 @@
 .description {
     overflow-y: auto;
     overflow-x: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+}
+
+.description_immutable {
+    overflow: hidden;
 
     margin: 0;
     padding: 0;

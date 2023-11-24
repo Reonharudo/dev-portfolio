@@ -36,7 +36,15 @@ export function ProjectShowcase({
 
             <div className={styles.description_container}>
                 <h1 className={styles.project_headline}>{headline}</h1>
-                <p className={styles.description}>{description}</p>
+                <p
+                    className={
+                        isImmutable
+                            ? styles.description_immutable
+                            : styles.description
+                    }
+                >
+                    {description}
+                </p>
             </div>
         </div>
     );
