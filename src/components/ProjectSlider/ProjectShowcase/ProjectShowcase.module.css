@@ -33,6 +33,9 @@
 .image_gallery {
     grid-area: image_gallery;
 
+    width: 100%;
+    height: 100%;
+
     display: flex;
 
     overflow: hidden;

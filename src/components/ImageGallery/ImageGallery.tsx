@@ -4,7 +4,6 @@ import Image from "next/image";
 import styles from "./ImageGallery.module.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
-import { off } from "process";
 
 export enum SpawnAnimation {
     SWIPE_FROM_LEFT,
