@@ -53,6 +53,7 @@
     white-space: break-spaces;
 
     height: 100%;
+    overflow: hidden;
 }
 
 .description_container h1 {
@@ -61,10 +62,6 @@
 }
 
 @media screen and (width <= 600px) {
-    .description_container {
-        overflow: auto;
-    }
-
     .description_container h1 {
         max-height: 60%;
     }

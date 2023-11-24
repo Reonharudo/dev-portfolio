@@ -22,12 +22,6 @@
     row-gap: 1rem;
 }
 
-@media screen and (width <= 600px) {
-    .image_desc_wrapper {
-        height: 20vh;
-    }
-}
-
 .grid_button_container {
     grid-area: btn_area;
     display: grid;
@@ -36,6 +30,12 @@
 
     column-gap: 1rem;
     grid-template-areas: "btn_wrapper image_btn_group";
+}
+
+@media screen and (width <= 800px) {
+    .grid_button_container {
+        display: none;
+    }
 }
 
 .image_desc {
