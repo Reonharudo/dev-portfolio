@@ -17,6 +17,12 @@
     padding: 1rem;
 }
 
+@media screen and (width <= 800px) {
+    .container {
+        padding: 0.2rem;
+    }
+}
+
 .background {
     background: linear-gradient(
         180deg,

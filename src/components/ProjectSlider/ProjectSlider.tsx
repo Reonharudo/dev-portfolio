@@ -6,7 +6,6 @@ import {
     ProjectShowcase,
 } from "./ProjectShowcase/ProjectShowcase";
 import styles from "./ProjectSlider.module.css";
-import Image from "next/image";
 import { SpawnAnimation } from "../ImageGallery/ImageGallery";
 
 interface ProjectSliderProps {
