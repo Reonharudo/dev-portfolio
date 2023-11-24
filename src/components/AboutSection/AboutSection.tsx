@@ -68,16 +68,10 @@ export function AboutSection() {
 
                     <p>
                         Beyond my software engineering endeavours, I am a
-                        hardware enthusiast as you may see on the{" "}
-                        <span
-                            className={styles.inline_btn}
-                            onClick={scrollToBtn}
-                        >
-                            pictures.
-                        </span>{" "}
-                        I&apos;m currently planning to build a new rig with the
-                        upcoming Zen5 CPU (maybe 3D-VCache) so that I can
-                        finally upgrade to 32GB DDDR5 Ram. :)
+                        hardware enthusiast. I&apos;m currently planning to
+                        build a new rig with the upcoming Zen5 CPU (maybe
+                        3D-VCache) so that I can finally upgrade to 32GB DDDR5
+                        Ram. :)
                         <br />
                         <br />
                         Additionally, I actively collect and peruse Wikipedia
@@ -89,45 +83,6 @@ export function AboutSection() {
                     </p>
                     <p>Leonhard Muellauer</p>
                 </div>
-
-                {showImageGallery && (
-                    <div
-                        className={styles.image_gallery_wrapper}
-                        ref={imageGalleryWrapper}
-                    >
-                        <button
-                            className={styles.btn}
-                            onClick={() => setShowImageGallery(false)}
-                        >
-                            Hide
-                        </button>
-                        <ImageGallery
-                            images={[
-                                {
-                                    imageURL: "/about-me/pc_building.jpeg",
-                                    description:
-                                        "My current pc. I'm planning to get a Fractal Torrent Case soon.",
-                                },
-                                {
-                                    imageURL: "/about-me/some_hardware.png",
-                                },
-                            ]}
-                            isImmutable={false}
-                        />
-                    </div>
-                )}
-                {!showImageGallery && (
-                    <div className={styles.image_section}>
-                        <button
-                            onClick={() => setShowImageGallery(true)}
-                            ref={btnRef}
-                            className={styles.btn}
-                            id="show_images_about_section"
-                        >
-                            Show Pictures
-                        </button>
-                    </div>
-                )}
             </div>
         </section>
     );
