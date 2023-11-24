@@ -1,11 +1,8 @@
 .container {
-    display: grid;
-    grid-template-areas:
-        "image_desc_wrapper image_desc_wrapper"
-        "animation_btn_group image_btn_group";
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 
-    row-gap: 1.2rem;
+    gap: 1rem;
 }
 
 /*
@@ -14,12 +11,25 @@
 
 .image_desc_wrapper {
     grid-area: image_desc_wrapper;
-    height: 400px;
-    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    height: 25rem;
+    margin-top: 1rem;
+}
+
+@media screen and (width <= 600px) {
+    .image_desc_wrapper {
+        height: 20vh;
+    }
+}
+
+.grid_button_container {
+    display: grid;
+    grid-template-areas: "btn_wrapper selection_btn_group";
+    height: 5rem;
 }
 
 .image_desc {
@@ -30,9 +40,24 @@
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 95%;
+    max-height: 100%;
 
     border-radius: 10px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: space-between;
+
+    grid-template-areas: "btn_wrapper selection_btn_group";
+}
+
+.btn_wrapper {
+    grid-area: btn_wrapper;
+}
+
+.selection_btn_group {
+    grid-area: selection_btn_group;
 }
 
 /*

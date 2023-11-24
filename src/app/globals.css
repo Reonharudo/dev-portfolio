@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --main-background: #ffffff;
     --background-1: #e6e6e6;
