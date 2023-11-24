@@ -3,7 +3,7 @@
     height: 100%;
 
     display: grid;
-    grid-template-rows: 70% 30%;
+    grid-template-rows: 85% 15%;
     grid-template-areas: "image_desc_wrapper" "btn_area";
 }
 
@@ -19,6 +19,7 @@
     align-items: center;
 
     height: 100%;
+    row-gap: 1rem;
 }
 
 @media screen and (width <= 600px) {
