@@ -4,7 +4,7 @@
 
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 15% 60% 15%;
+    grid-template-columns: 15% 70% 15%;
     grid-template-areas: "prev_btn project_showcase next_btn";
     grid-column-gap: 0.3rem;
 
