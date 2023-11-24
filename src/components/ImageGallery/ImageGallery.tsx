@@ -20,12 +20,14 @@ interface ImageGalleryProps {
     images: ImageWithDescription[];
     isImmutable: boolean;
     spawnAnimation?: SpawnAnimation;
+    onImageChange: (imageIndex: number) => any;
 }
 
 export function ImageGallery({
     images = [],
     isImmutable = false,
     spawnAnimation = SpawnAnimation.DEFAULT,
+    onImageChange,
 }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const prevIndex = useRef<number>(currentIndex);
@@ -37,6 +39,10 @@ export function ImageGallery({
         useState<boolean>(true);
 
     const containerRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        onImageChange(currentIndex);
+    }, [currentIndex]);
 
     const slideThroughImagesAutomatic = useCallback(() => {
         if (!isImmutable) {

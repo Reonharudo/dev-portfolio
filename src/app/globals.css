@@ -25,6 +25,9 @@ body {
     --scrollbar-background-thumb: #828282;
     --scrollbar-background-border: #505050;
 
+    --progress-bar-background: rgb(88, 123, 207);
+    --progress-bar-background-total: rgb(138, 138, 138);
+
     --font-color: #000000;
     --font-color-2: #000000;
 
@@ -49,6 +52,9 @@ body {
     --scrollbar-background: rgb(216, 216, 216);
     --scrollbar-background-thumb: #828282;
     --scrollbar-background-border: #3a3a3a;
+
+    --progress-bar-background: rgb(88, 123, 207);
+    --progress-bar-background-total: rgb(180, 180, 180);
 
     --font-color: rgb(216, 216, 216);
     --font-color-2: #f0f0f0;

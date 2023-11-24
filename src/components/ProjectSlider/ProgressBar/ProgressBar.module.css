@@ -1,0 +1,30 @@
+.wrapper {
+    margin-bottom: 0.4rem;
+    height: 0.4rem;
+
+    display: flex;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: none;
+}
+
+@media screen and (width <= 800px) {
+    .wrapper {
+        display: flex;
+    }
+}
+
+.progress {
+    grid-area: progress_bar;
+    background-color: var(--progress-bar-background);
+
+    transition: width 2s ease;
+}
+
+.total {
+    grid-area: total_bar;
+    background-color: var(--progress-bar-background-total);
+    flex-grow: 1;
+}

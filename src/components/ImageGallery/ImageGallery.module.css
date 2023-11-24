@@ -39,6 +39,11 @@
     .grid_button_container {
         display: none;
     }
+
+    .container {
+        grid-template-rows: 100%;
+        grid-template-areas: "image_desc_wrapper";
+    }
 }
 
 .image_desc {
