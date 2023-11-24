@@ -106,7 +106,7 @@ export function AboutSection() {
                                 {
                                     imageURL: "/about-me/pc_building.jpeg",
                                     description:
-                                        "My current pc. I&apos;m planning to get a Fractal Torrent Case soon.",
+                                        "My current pc. I'm planning to get a Fractal Torrent Case soon.",
                                 },
                                 {
                                     imageURL: "/about-me/some_hardware.png",
