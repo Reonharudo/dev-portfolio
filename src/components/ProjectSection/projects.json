@@ -1,7 +1,7 @@
 [
     {
         "headline": "Shopping Platform for Concerts",
-        "description": "Platform to buy/view tickets to concerts and with a unique, intuitive self-developed dashboard for admins.\n\nWritten in AngularJS/Spring Boot.\n\nI'm especially proud about the sophisticated editor feature that allows admins to create any hallplan they want.\nThese hallplans can then be assigned to an Event of which tickets may be sold to registered users. ",
+        "description": "Platform to buy/view tickets to concerts and with a unique, intuitive self-developed dashboard for admins.\n\nWritten in AngularJS/Spring Boot.\n\nI'm especially proud about the sophisticated editor feature that allows admins to create any hallplan they want.\nThese hallplans can then be assigned to an Event of which tickets may be sold to registered users.\n\n",
         "images": [
             {
                 "imageURL": "/projects/shopping-platform/dashboard.png",
@@ -31,7 +31,7 @@
     },
     {
         "headline": "Secret Project",
-        "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features yet to be unveiled.\n\n Maintaining a level of confidentiality, I plan to launch it professionally with a structured pricing model. I am eager to discuss this project further in an interview.",
+        "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features yet to be unveiled.\n\n Maintaining a level of confidentiality, I plan to launch it professionally with a structured pricing model. I am eager to discuss this project further in an interview.\n\n",
         "images": [
             {
                 "imageURL": "/projects/secret_project/collection_list.png",
@@ -53,7 +53,7 @@
     },
     {
         "headline": "WYSIWYG Editor",
-        "description": "The development journey for this was extremly satisfying, challinging and interesting.\n\nIt uses a basic contenteditable html element and under the hood I'm using NextJS (React) and Meta's new library Lexical.\nI'm using it since it released on the canary alpha channel with no documentation. So I always (still do) look through the source code to understand how to utilize the library.\n\nThe image is streamed to the backend, the backend streams the chunks it receives immediatetely to the S3 Storage.\nThanks to that this is really efficiently solved, resulting in a much lower RAM utilization on the BE. ",
+        "description": "The development journey for this was extremly satisfying, challinging and interesting.\n\nIt uses a basic contenteditable html element and under the hood I'm using NextJS (React) and Meta's new library Lexical.\nI'm using it since it released on the canary alpha channel with no documentation. So I always (still do) look through the source code to understand how to utilize the library.\n\nThe image is streamed to the backend, the backend streams the chunks it receives immediatetely to the S3 Storage.\nThanks to that this is really efficiently solved, resulting in a much lower RAM utilization on the BE.\n\n",
         "images": [
             {
                 "imageURL": "/projects/wysiwyg-editor/example.png",
@@ -79,7 +79,7 @@
     },
     {
         "headline": "Mail Transfer Monitoring Distributed System",
-        "description": "As part of a university assignment, I designed a robust multi-threaded-system featuring Mail Servers, Transfer Servers, and a Monitoring Server components using Java Sockets.\n\nI implemented custom protocols, DMTP (Data Mail Transfer Protocol) and DMAP (Data Mail Access Protocol), to suit the project's requirements.\n\nFor efficiency considerations, I chose UDP for communication with the Monitoring Server and TCP for DMAP/DMTP.\nThis decision reflects a deliberate effort to optimize performance and reliability within the system while adhering to the project's specifications.",
+        "description": "As part of a university assignment, I designed a robust multi-threaded-system featuring Mail Servers, Transfer Servers, and a Monitoring Server components using Java Sockets.\n\nI implemented custom protocols, DMTP (Data Mail Transfer Protocol) and DMAP (Data Mail Access Protocol), to suit the project's requirements.\n\nFor efficiency considerations, I chose UDP for communication with the Monitoring Server and TCP for DMAP/DMTP.\nThis decision reflects a deliberate effort to optimize performance and reliability within the system while adhering to the project's specifications.\n\n",
         "images": [
             {
                 "imageURL": "/projects/mail-transfer-monitoring/architecture_model.png",
@@ -93,7 +93,7 @@
     },
     {
         "headline": "Animal Ownership Platform",
-        "description": "A platform that manages horses of owners. Further you can edit information and see the ancestry of each horse.\n\nThe family tree was interesting to implement. Utilizing a recursive SQL Query and a recursive approach to render components efficiently, the endresult is quite satisfying.\n\n Developed it with Spring Boot BE and Angular FE.",
+        "description": "A platform that manages horses of owners. Further you can edit information and see the ancestry of each horse.\n\nThe family tree was interesting to implement. Utilizing a recursive SQL Query and a recursive approach to render components efficiently, the endresult is quite satisfying.\n\n Developed it with Spring Boot BE and Angular FE.\n\n",
         "images": [
             {
                 "imageURL": "/projects/animal-ownership-platform/dashboard.png",
@@ -115,7 +115,7 @@
     },
     {
         "headline": "Spin2Time - Time Tracking Software",
-        "description": "Developed a time tracking software that can be used with the Alexa Amazon Assistant.\n\n Please have a look at the pictures, I think they will show you how the system was designed.",
+        "description": "Developed a time tracking software that can be used with the Alexa Amazon Assistant.\n\n Please have a look at the pictures, I think they will show you how the system was designed.\n\n",
         "images": [
             {
                 "imageURL": "/projects/spin2time/architecture.png",
@@ -145,7 +145,7 @@
     },
     {
         "headline": "My Portfolio",
-        "description": "Thank you that you have come this far! :)\n\nI hope you noticed a lot of a details on this page, e.g the animations on this Project Showcase Slider. Like how it slides from left / right, the responsive design, the animated Headline, the blur, the mobile navigation etc.\n\nThis portfolio is just using NextJS - CSS/Structure/Components are 100% made by me :)\nThe combination of SSR and Client Components is the icing on the cake.",
+        "description": "Thank you that you have come this far! :)\n\nI hope you noticed a lot of a details on this page, e.g the animations on this Project Showcase Slider. Like how it slides from left / right, the responsive design, the animated Headline, the blur, the mobile navigation etc.\n\nThis portfolio is just using NextJS - CSS/Structure/Components are 100% made by me :)\nThe combination of SSR and Client Components is the icing on the cake.\n\n",
         "images": [
             {
                 "imageURL": "/projects/dev-portfolio/startpage.png",

@@ -35,7 +35,7 @@ export function ProjectShowcase({
             </div>
 
             <div className={styles.description_container}>
-                <h1>{headline}</h1>
+                <h1 className={styles.project_headline}>{headline}</h1>
                 <p className={styles.description}>{description}</p>
             </div>
         </div>

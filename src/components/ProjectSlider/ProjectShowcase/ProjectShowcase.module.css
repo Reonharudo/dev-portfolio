@@ -23,6 +23,12 @@
     }
 }
 
+.project_headline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .background {
     background: linear-gradient(
         180deg,
