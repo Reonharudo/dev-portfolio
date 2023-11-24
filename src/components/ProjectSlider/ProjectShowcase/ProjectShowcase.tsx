@@ -23,7 +23,7 @@ export function ProjectShowcase({
     isImmutable = false,
     spawnAnimation = SpawnAnimation.DEFAULT,
 }: IntProjectShowcase) {
-    const [currentImageCount, setCurrentImageCount] = useState<number>(0);
+    const [currentImageCount, setCurrentImageCount] = useState<number>(1);
 
     return (
         <div
