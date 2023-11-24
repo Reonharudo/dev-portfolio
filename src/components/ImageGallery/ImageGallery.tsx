@@ -183,33 +183,35 @@ export function ImageGallery({
                 </p>
             </div>
 
-            {!isImmutable && (
-                <div className={styles.btn_wrapper}>
-                    <AnimationBtn
-                        showStop={isAutomaticImageSliderActive}
-                        onClick={() =>
-                            setIsAutomaticImageSliderActice(
-                                !isAutomaticImageSliderActive
-                            )
-                        }
-                    />
-                </div>
-            )}
-
-            <div className={styles.selection_btn_group} ref={containerRef}>
-                {images.map((_value, index) => (
-                    <div className={styles.btn_carousel_item} key={index}>
-                        <CircularBtn
-                            handleOnActive={scrollToElement}
-                            disable={isImmutable}
-                            key={index}
-                            isActive={index === currentIndex}
-                            handleClick={() =>
-                                handleManualSlideThroughImage(index)
+            <div className={styles.grid_button_container}>
+                {!isImmutable && (
+                    <div className={styles.btn_wrapper}>
+                        <AnimationBtn
+                            showStop={isAutomaticImageSliderActive}
+                            onClick={() =>
+                                setIsAutomaticImageSliderActice(
+                                    !isAutomaticImageSliderActive
+                                )
                             }
                         />
                     </div>
-                ))}
+                )}
+
+                <div className={styles.selection_btn_group} ref={containerRef}>
+                    {images.map((_value, index) => (
+                        <div className={styles.btn_carousel_item} key={index}>
+                            <CircularBtn
+                                handleOnActive={scrollToElement}
+                                disable={isImmutable}
+                                key={index}
+                                isActive={index === currentIndex}
+                                handleClick={() =>
+                                    handleManualSlideThroughImage(index)
+                                }
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

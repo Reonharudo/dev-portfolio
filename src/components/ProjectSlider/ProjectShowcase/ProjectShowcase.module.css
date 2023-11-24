@@ -1,18 +1,20 @@
 .container {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: minmax(0, 100%);
-    grid-template-rows: minmax(0, 30rem) minmax(0, 13rem);
-    grid-template-areas: "image_gallery" "description";
+    height: 70vh;
+    max-height: 70vh;
+    overflow: hidden;
+    width: 100%;
 
-    padding: 1rem;
-    padding-top: 2rem;
+    display: grid;
+
+    grid-template-rows: 60% 40%;
+    grid-template-columns: 100%;
+    grid-template-areas: "image_gallery" "description";
 
     row-gap: 0.8rem;
 
     border-radius: 10px;
 
-    overflow: hidden;
+    padding: 1rem;
 }
 
 .background {
@@ -30,6 +32,12 @@
 
 .image_gallery {
     grid-area: image_gallery;
+
+    display: flex;
+
+    overflow: hidden;
+    justify-self: center;
+    align-items: center;
 }
 
 .description_container {
@@ -40,6 +48,23 @@
     text-wrap: wrap;
     text-overflow: ellipsis;
     white-space: break-spaces;
+
+    height: 100%;
+}
+
+.description_container h1 {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (width <= 600px) {
+    .description_container {
+        overflow: auto;
+    }
+
+    .description_container h1 {
+        max-height: 60%;
+    }
 }
 
 .description {
@@ -48,6 +73,8 @@
 
     margin: 0;
     padding: 0;
+
+    height: 100%;
 }
 
 .immutable {

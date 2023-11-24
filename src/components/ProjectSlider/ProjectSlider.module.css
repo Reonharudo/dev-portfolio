@@ -1,33 +1,22 @@
 .container {
+    height: 70vh;
+    width: 100%;
+
     display: grid;
-    grid-template-rows: minmax(0, 100%);
-    grid-template-columns: minmax(0, 15%) minmax(0, 65%) minmax(10%, 15%);
+    grid-template-rows: 100%;
+    grid-template-columns: 15% 60% 15%;
     grid-template-areas: "prev_btn project_showcase next_btn";
-    grid-column-gap: 0.1rem;
-
-    max-width: 100%;
-
-    overflow: hidden;
+    grid-column-gap: 0.3rem;
 
     justify-content: center;
-}
-
-@media screen and (width <= 1000px) {
-    .container {
-        grid-template-columns: minmax(0, 20%) minmax(0, 60%) minmax(0, 20%);
-    }
-}
-
-@media screen and (width <= 550px) {
-    .container {
-        grid-template-columns: minmax(0, 15%) minmax(0, 50%) minmax(0, 15%);
-    }
 }
 
 /*
     Hero Project
 */
 .project_showcase_highlight_animation {
+    background-color: var(--project-slider-hero-background);
+    border-radius: 10px;
     animation-name: increase_to_full_visbility; /* Use a different animation name for delayed animation */
     animation-duration: 2s;
     animation-fill-mode: forwards; /* Retain the final state of the animation */
@@ -36,9 +25,6 @@
 .hero_project {
     position: relative;
     z-index: 1;
-    background-color: var(--project-slider-hero-background);
-
-    border-radius: 10px;
 }
 
 .project_showcase {
@@ -57,15 +43,6 @@
     grid-area: next_btn;
 }
 
-.next_btn,
-.prev_btn {
-    background-color: rgb(201, 201, 201);
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
 .btn_desc_container {
     display: inline-flex;
     justify-self: center;
@@ -73,26 +50,13 @@
     flex-direction: column-reverse;
 }
 
-.tooltip {
-    position: absolute;
-    margin-bottom: 2rem;
-
-    display: none;
-}
-
 .btn_desc_container {
     position: relative;
 }
 
-.next_btn:hover + .tooltip {
-    display: block;
-}
-
-.prev_btn:hover + .tooltip {
-    display: block;
-}
-
 .inactive_item_blurry {
+    width: 100%;
+
     animation-name: slowly_decrease_opacity; /* Use a different animation name for delayed animation */
     animation-duration: 0.5s;
     animation-fill-mode: forwards; /* Retain the final state of the animation */

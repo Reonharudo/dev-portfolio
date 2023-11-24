@@ -1,13 +1,14 @@
 .container {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    height: fit-content;
 }
 .background {
     padding: 1rem;
     background-color: var(--background-1);
     border-radius: 10px;
 
-    height: 2rem;
+    height: 4rem;
 
     overflow: hidden;
 }
