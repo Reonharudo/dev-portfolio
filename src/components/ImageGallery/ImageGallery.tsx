@@ -162,6 +162,12 @@ export function ImageGallery({
         setCurrentIndex(newCurrentIndex);
     }
 
+    const openImageInNewTab = () => {
+        if (!isImmutable) {
+            window.open(images[currentIndex].imageURL, "_blank");
+        }
+    };
+
     return (
         <div className={styles.container}>
             {/* Hero Image */}
@@ -176,6 +182,7 @@ export function ImageGallery({
                     } ${getInitialAnimationClassNameOnMount()} ${getDynamicAnimationClassNameDependingOnIndex()}`}
                     width={1000}
                     height={600}
+                    onClick={openImageInNewTab}
                 ></Image>
                 <p className={styles.image_desc}>
                     {images[currentIndex].description}
