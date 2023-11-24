@@ -40,10 +40,6 @@ export function ImageGallery({
 
     const containerRef = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        onImageChange(currentIndex);
-    }, [currentIndex]);
-
     const slideThroughImagesAutomatic = useCallback(() => {
         if (!isImmutable) {
             //clear prev interval
@@ -59,6 +55,8 @@ export function ImageGallery({
                     if (nextIndex >= images.length) {
                         nextIndex = 0;
                     }
+
+                    onImageChange(nextIndex);
 
                     return nextIndex;
                 });
