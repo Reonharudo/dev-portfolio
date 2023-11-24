@@ -16,6 +16,8 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const prevIndex = useRef<number>(currentIndex);
 
+    const startXCoordindate = useRef<number>(0);
+
     useEffect(() => {
         prevIndex.current = currentIndex;
     }, [currentIndex]);
@@ -23,8 +25,6 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
     if (projects.length === 0) {
         return null;
     }
-
-    const startXCoordindate = useRef<number>(0);
 
     function handleTouchStart(event: React.TouchEvent) {
         startXCoordindate.current = event.touches[0].clientX;
