@@ -24,6 +24,26 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
         return null;
     }
 
+    const startXCoordindate = useRef<number>(0);
+
+    function handleTouchStart(event: React.TouchEvent) {
+        startXCoordindate.current = event.touches[0].clientX;
+    }
+
+    function handleTouchMove(event: React.TouchEvent) {
+        const deltaX = event.touches[0].clientX - startXCoordindate.current;
+
+        if (deltaX > 50) {
+            // Swipe right
+            setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+        } else if (deltaX < -50) {
+            // Swipe left
+            setCurrentIndex((prevIndex) =>
+                Math.min(prevIndex + 1, projects.length - 1)
+            );
+        }
+    }
+
     function getSpawnAnimation() {
         if (currentIndex > prevIndex.current) {
             return SpawnAnimation.SWIPE_FROM_RIGHT;
@@ -53,6 +73,8 @@ export function ProjectSlider({ projects = [] }: ProjectSliderProps) {
             )}
 
             <div
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
                 key={
                     currentIndex
                 } /* IMPORTANT: DO NOT REMOVE key={currentIndex}. This needed so that React really renders this
