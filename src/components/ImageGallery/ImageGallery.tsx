@@ -181,7 +181,11 @@ export function ImageGallery({
                         styles.image
                     } ${getInitialAnimationClassNameOnMount()} ${getDynamicAnimationClassNameDependingOnIndex()}`}
                     width={1000}
+                    priority={true}
                     height={600}
+                    placeholder={
+                        "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                    }
                     onClick={openImageInNewTab}
                 ></Image>
                 <p className={styles.image_desc}>
