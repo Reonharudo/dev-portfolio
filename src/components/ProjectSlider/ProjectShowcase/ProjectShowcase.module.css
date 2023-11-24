@@ -24,7 +24,7 @@
 }
 
 .project_headline {
-    overflow: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
