@@ -26,22 +26,6 @@ export const metadata: Metadata = {
     ],
     creator: "Leonhard Muellauer",
     publisher: "Leonhard Muellauer",
-
-    openGraph: {
-        title: "Leonhard Muellauer - Portfolio",
-        description: "Learn more about Leonhard Muellauer",
-        url: "https://www.leonhardmuellauer.dev",
-        siteName: "Portfolio Leonhard Muellauer",
-        images: [
-            {
-                url: "https://www.leonhardmuellauer.dev/_next/image?url=%2Fme.png&w=640&q=75",
-                width: 400,
-                height: 440,
-            },
-        ],
-        locale: "en_US",
-        type: "website",
-    },
 };
 
 export default function RootLayout({

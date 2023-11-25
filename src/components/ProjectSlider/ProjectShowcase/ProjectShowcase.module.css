@@ -27,6 +27,12 @@
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+
+    padding: 0;
+    height: 2.6rem;
 }
 
 .background {
@@ -69,13 +75,6 @@
     overflow: hidden;
 
     margin-bottom: 1.6rem;
-}
-
-.description_container h1 {
-    margin: 0;
-    padding: 0;
-    margin-top: 1rem;
-    height: 2.6rem;
 }
 
 @media screen and (width <= 600px) {
