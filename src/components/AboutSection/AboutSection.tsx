@@ -1,53 +1,25 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
 import styles from "./AboutSection.module.css";
-import { ImageGallery } from "../ImageGallery/ImageGallery";
 import { SectionHeadline } from "../SectionHeadline/SectionHeadline";
 
+function calculateAge(birthYear = 2001, birthMonth = 2, birthDay = 5) {
+    const today = new Date();
+    const birthdate = new Date(birthYear, birthMonth - 1, birthDay);
+
+    let age = today.getFullYear() - birthdate.getFullYear();
+
+    if (
+        today.getMonth() < birthdate.getMonth() ||
+        (today.getMonth() === birthdate.getMonth() &&
+            today.getDate() < birthdate.getDate())
+    ) {
+        age--;
+    }
+
+    return age;
+}
+
 export function AboutSection() {
-    const [showImageGallery, setShowImageGallery] = useState<boolean>(false);
-
-    const btnRef = useRef<HTMLButtonElement | null>(null);
-    const imageGalleryWrapper = useRef<HTMLDivElement | null>(null);
-
-    function scrollToBtn() {
-        btnRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "center", // Center the element in the viewport
-            inline: "nearest",
-        });
-    }
-
-    function scrollToImageGallery() {
-        imageGalleryWrapper.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "center", // Center the element in the viewport
-            inline: "nearest",
-        });
-    }
-
-    function calculateAge(birthYear = 2001, birthMonth = 2, birthDay = 5) {
-        const today = new Date();
-        const birthdate = new Date(birthYear, birthMonth - 1, birthDay);
-
-        let age = today.getFullYear() - birthdate.getFullYear();
-
-        if (
-            today.getMonth() < birthdate.getMonth() ||
-            (today.getMonth() === birthdate.getMonth() &&
-                today.getDate() < birthdate.getDate())
-        ) {
-            age--;
-        }
-
-        return age;
-    }
-
-    useEffect(() => {
-        if (showImageGallery) {
-            scrollToImageGallery();
-        }
-    }, [showImageGallery]);
+    const age = calculateAge();
 
     return (
         <section id="about" className={styles.container}>
@@ -56,8 +28,8 @@ export function AboutSection() {
                 <div className={styles.description_container}>
                     <p>Welcome on my page!</p>
                     <p>
-                        I am a {calculateAge()} year old Software Engineer with
-                        a relentless passion for learning and staying at the
+                        I am a {age} year old Software Engineer with a
+                        relentless passion for learning and staying at the
                         forefront of technology.
                     </p>
                     <p>
