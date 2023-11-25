@@ -31,10 +31,10 @@ export function ImageGallery({
 }: Readonly<ImageGalleryProps>) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const prevIndex = useRef<number>(currentIndex);
+
     const heroImageRef = useRef<HTMLImageElement | null>(null);
     const wasInitialAnimationClassNameAssigned = useRef<boolean>(false);
 
-    const currentIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const [isAutomaticImageSliderActive, setIsAutomaticImageSliderActice] =
         useState<boolean>(true);
 
@@ -42,32 +42,27 @@ export function ImageGallery({
 
     const slideThroughImagesAutomatic = useCallback(() => {
         if (!isImmutable) {
-            //clear prev interval
-            clearPrevInterval();
+            let nextIndex = prevIndex.current + 1;
+            if (nextIndex >= images.length) {
+                nextIndex = 0;
+            }
 
-            //set new interval
-            const interval = setInterval(() => {
-                setCurrentIndex((prevIndex) => {
-                    // Calculate the next index based on the current index
-                    let nextIndex = prevIndex + 1;
+            // If the next index is out of bounds, reset to the first image
+            if (nextIndex >= images.length) {
+                nextIndex = 0;
+            }
 
-                    // If the next index is out of bounds, reset to the first image
-                    if (nextIndex >= images.length) {
-                        nextIndex = 0;
-                    }
-
-                    onImageChange(nextIndex);
-
-                    return nextIndex;
-                });
-            }, 4000);
-
-            currentIntervalRef.current = interval;
+            setCurrentIndex(nextIndex);
+            onImageChange(currentIndex);
         }
-    }, [isImmutable, images]);
+    }, [isImmutable, images, onImageChange]);
 
     useEffect(() => {
-        slideThroughImagesAutomatic();
+        const interval = setInterval(slideThroughImagesAutomatic, 4000);
+
+        return () => {
+            clearInterval(interval);
+        };
     }, [isImmutable, slideThroughImagesAutomatic]);
 
     useEffect(() => {
@@ -118,12 +113,6 @@ export function ImageGallery({
         }
     }
 
-    function clearPrevInterval() {
-        if (currentIntervalRef.current) {
-            clearInterval(currentIntervalRef.current);
-        }
-    }
-
     function scrollToElement(buttonElem: HTMLButtonElement | null) {
         // Check if container is in viewport
         const isContainerInViewport = () => {
@@ -160,9 +149,6 @@ export function ImageGallery({
     }
 
     function handleManualSlideThroughImage(newCurrentIndex: number) {
-        //clear prev interval
-        clearPrevInterval();
-
         setCurrentIndex(newCurrentIndex);
     }
 
