@@ -53,7 +53,7 @@ export function ImageGallery({
             }
 
             setCurrentIndex(nextIndex);
-            onImageChange(currentIndex);
+            onImageChange(nextIndex);
         }
     }, [isImmutable, images, onImageChange]);
 

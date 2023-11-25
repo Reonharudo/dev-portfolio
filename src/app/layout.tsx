@@ -10,7 +10,22 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Leonhard Muellauer - Portfolio",
-    description: "About Leonhard Muellauer Software Engineer in Vienna",
+    description: "About Leonhard Muellauer  - a Software Engineer in Vienna",
+    applicationName: "Portfolio of Leonhard Muellauer",
+    keywords: [
+        "Leonhard",
+        "Muellauer",
+        "Software Developer",
+        "Software Engineer",
+        "Software",
+        "Developer",
+        "Portfolio",
+        "Career",
+        "Job",
+        "Skilled",
+    ],
+    creator: "Leonhard Muellauer",
+    publisher: "Leonhard Muellauer",
 };
 
 export default function RootLayout({

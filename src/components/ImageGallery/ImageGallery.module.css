@@ -19,7 +19,7 @@
     align-items: center;
 
     height: 100%;
-    row-gap: 1rem;
+    row-gap: 0.5rem;
 }
 
 .grid_button_container {
@@ -50,6 +50,8 @@
     color: var(--font-color-2);
     margin: 0;
     padding: 0;
+
+    text-align: center;
 }
 
 .image_desc p {
