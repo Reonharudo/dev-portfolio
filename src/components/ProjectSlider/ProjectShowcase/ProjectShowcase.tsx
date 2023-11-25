@@ -23,7 +23,7 @@ export function ProjectShowcase({
     isImmutable = false,
     spawnAnimation = SpawnAnimation.DEFAULT,
 }: IntProjectShowcase) {
-    const [currentImageCount, setCurrentImageCount] = useState<number>(1);
+    const [currentImageCount, setCurrentImageCount] = useState<number>(0);
 
     return (
         <div
@@ -34,7 +34,7 @@ export function ProjectShowcase({
             <div className={styles.image_gallery}>
                 <ImageGallery
                     onImageChange={(index: number) =>
-                        setCurrentImageCount(index + 1)
+                        setCurrentImageCount(index)
                     }
                     spawnAnimation={spawnAnimation}
                     isImmutable={isImmutable}
@@ -45,7 +45,7 @@ export function ProjectShowcase({
             <div className={styles.description_container}>
                 {!isImmutable && (
                     <ProgressBar
-                        maximum={images.length}
+                        maximum={images.length - 1}
                         count={currentImageCount}
                     />
                 )}
