@@ -152,6 +152,10 @@
                 "description": "Start Page"
             },
             {
+                "imageURL": "/projects/dev-portfolio/projects_structure.png",
+                "description": "How I am adding new projets to my portfolio with simple JSON."
+            },
+            {
                 "imageURL": "/projects/dev-portfolio/startpage_dark.png",
                 "description": "Whenever there is a dark mode, I will for sure use it."
             }
