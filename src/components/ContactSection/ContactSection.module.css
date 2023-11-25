@@ -43,19 +43,19 @@
 
 @keyframes borderAnimation {
     0% {
-        border-color: rgb(188, 188, 188);
+        border-color: var(--highlight-color-0);
     }
     100% {
-        border-color: rgb(20, 14, 98);
+        border-color: var(--highlight-color-2);
     }
 }
 
 @keyframes borderAnimationOnHover {
     0% {
-        border-color: rgb(98, 104, 222);
+        border-color: var(--highlight-color-1);
     }
     100% {
-        border-color: rgb(20, 14, 98);
+        border-color: var(--highlight-color-2);
     }
 }
 

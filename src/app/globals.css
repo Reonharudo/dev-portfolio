@@ -28,6 +28,10 @@ body {
     --progress-bar-background: rgb(88, 123, 207);
     --progress-bar-background-total: rgb(138, 138, 138);
 
+    --highlight-color-0: rgb(191, 82, 82);
+    --highlight-color-1: rgb(96, 101, 198);
+    --highlight-color-2: rgb(154, 118, 227);
+
     --font-color: #000000;
     --font-color-2: #000000;
 
@@ -55,6 +59,10 @@ body {
 
     --progress-bar-background: rgb(88, 123, 207);
     --progress-bar-background-total: rgb(180, 180, 180);
+
+    --highlight-color-0: rgb(188, 188, 188);
+    --highlight-color-1: rgb(98, 104, 222);
+    --highlight-color-2: rgb(20, 14, 98);
 
     --font-color: rgb(216, 216, 216);
     --font-color-2: #f0f0f0;
