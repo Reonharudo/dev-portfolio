@@ -23,6 +23,7 @@ export const metadata: Metadata = {
         "Career",
         "Job",
         "Skilled",
+        "Müllauer",
     ],
     creator: "Leonhard Muellauer",
     publisher: "Leonhard Muellauer",
