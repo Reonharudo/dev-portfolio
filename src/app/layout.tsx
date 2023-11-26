@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Leonhard Muellauer - Software Engineer Portfolio",
     description:
-        "Learn more about Leonhard Muellauer - a skilled fullstack software engineer based in Vienna.",
+        "Learn more about Leonhard Muellauer - a skilled and passionate fullstack software engineer based in Vienna.",
     applicationName: "Portfolio of Leonhard Muellauer",
     keywords: [
         "Leonhard",
