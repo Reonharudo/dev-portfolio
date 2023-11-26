@@ -8,7 +8,21 @@
     flex-direction: column;
 }
 
-@media (width >= 2560px) {
+@media (width >= 1000px) {
+    .app {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (width >= 1500px) {
+    .app {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (width >= 2000px) {
     .app {
         width: 65%;
         margin: 0 auto;
