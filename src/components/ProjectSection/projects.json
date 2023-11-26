@@ -31,7 +31,7 @@
     },
     {
         "headline": "Secret Project",
-        "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features yet to be unveiled.\n\n Maintaining a level of confidentiality, I plan to launch it professionally with a structured pricing model. I am eager to discuss this project further in an interview.\n\n",
+        "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features.\n\nI plan to launch it professionally with a structured pricing model.\n\n",
         "images": [
             {
                 "imageURL": "/projects/secret_project/collection_list.png",
@@ -53,7 +53,7 @@
     },
     {
         "headline": "WYSIWYG Editor",
-        "description": "The development journey for this was extremly satisfying, challinging and interesting.\n\nIt uses a basic contenteditable html element and under the hood I'm using NextJS (React) and Meta's new library Lexical.\nI'm using it since it released on the canary alpha channel with no documentation. So I always (still do) look through the source code to understand how to utilize the library.\n\nThe image is streamed to the backend, the backend streams the chunks it receives immediatetely to the S3 Storage.\nThanks to that this is really efficiently solved, resulting in a much lower RAM utilization on the BE.\n\n",
+        "description": "The development journey for this was extremly satisfying, challinging and interesting.\n\nIt uses a basic contenteditable html element and under the hood I'm using NextJS (React) and Meta's new library Lexical.\nI'm using it since it released on the canary alpha channel with no documentation. So I always (still do) look through the source code to understand how to utilize the library.\n\nThe image is streamed to the backend, the backend streams the chunks it receives immediatetely to the S3 Storage.\nThanks to the efficient implementation, RAM utilization on the BE has been reduced to a minimum.",
         "images": [
             {
                 "imageURL": "/projects/wysiwyg-editor/example.png",
