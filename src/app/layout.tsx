@@ -7,23 +7,24 @@ import { NavigationBar } from "@/components/ResponsiveNavigationBar/NavigationBa
 import { useSSRTheme } from "@/components/hooks/useSSRTheme";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-    title: "Leonhard Muellauer - Portfolio",
-    description: "About Leonhard Muellauer  - a Software Engineer in Vienna",
+    title: "Leonhard Muellauer - Software Engineer Portfolio",
+    description:
+        "Explore the professional journey and expertise of Leonhard Muellauer, a skilled Software Engineer based in Vienna. View his projects, skills, and achievements.",
     applicationName: "Portfolio of Leonhard Muellauer",
     keywords: [
-        "Leonhard",
-        "Muellauer",
-        "Software Developer",
+        "Leonhard Muellauer",
+        "Leo Kenshi",
         "Software Engineer",
-        "Software",
-        "Developer",
+        "Programming",
+        "Web Development",
+        "Java",
+        "JavaScript",
+        "React",
+        "Node.js",
         "Portfolio",
         "Career",
-        "Job",
-        "Skilled",
-        "Müllauer",
+        "Skilled Developer",
     ],
     creator: "Leonhard Muellauer",
     publisher: "Leonhard Muellauer",
