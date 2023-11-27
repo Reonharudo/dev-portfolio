@@ -2,8 +2,9 @@
 import { Theme } from "@/components/hooks/theme";
 import { MoonIcon } from "@/components/icons/MoonIcon";
 import { SunIcon } from "@/components/icons/SunIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ThemeChangeBtn.module.css";
+import { useLocalStorage } from "@/components/hooks/useLocalStorage";
 
 interface ThemeChangeBtnProps {
     theme: Theme;
@@ -11,17 +12,50 @@ interface ThemeChangeBtnProps {
 }
 
 export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
+    /*
+        Theme from cookie has higher priority, then the value in LocalStorage
+     *  The localStorage value is used, to presumable update the cookie
+     */
     const [currentTheme, setCurrentTheme] = useState<Theme>(theme);
+    const [localStorageTheme, setLocalStorageTheme] = useLocalStorage<Theme>({
+        key: "theme",
+    });
+
+    function setThemeCookieAndOnHTMLBody(theme: Theme) {
+        //Set dataset theme attribute
+        document.body.dataset.theme = theme;
+
+        // Set cookie
+        // -- Set expiration date to 350 days from now
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 350);
+
+        const expires = expirationDate.toUTCString();
+
+        document.cookie = `theme=${theme}; expires=${expires}`;
+    }
+
+    useEffect(() => {
+        if (
+            localStorageTheme === Theme.DARK ||
+            localStorageTheme === Theme.LIGHT
+        ) {
+            setThemeCookieAndOnHTMLBody(localStorageTheme);
+        } else {
+            //set default
+            setLocalStorageTheme(theme);
+        }
+    }, [localStorageTheme]);
 
     function handleClick(selectedTheme: Theme) {
         if (selectedTheme === Theme.DARK) {
-            document.body.dataset.theme = Theme.LIGHT;
-            document.cookie = `theme=${Theme.LIGHT}`;
+            setThemeCookieAndOnHTMLBody(Theme.LIGHT);
             setCurrentTheme(Theme.LIGHT);
+            setLocalStorageTheme(Theme.LIGHT);
         } else if (selectedTheme === Theme.LIGHT) {
-            document.body.dataset.theme = Theme.DARK;
-            document.cookie = `theme=${Theme.DARK}`;
+            setThemeCookieAndOnHTMLBody(Theme.DARK);
             setCurrentTheme(Theme.DARK);
+            setLocalStorageTheme(Theme.DARK);
         }
     }
 
