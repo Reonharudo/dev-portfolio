@@ -1,7 +1,6 @@
 "use client";
 import { useLayoutEffect, useState } from "react";
 import styles from "./MobileNavigationBar.module.css";
-import Image from "next/image";
 import { createPortal } from "react-dom";
 import { MobileNavigationItem } from "./MobileNavigationItem/MobileNavigationItem";
 import { CloseIcon } from "@/components/icons/CloseIcon";
