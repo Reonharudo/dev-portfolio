@@ -40,7 +40,8 @@ export function ImageGallery({
         useState<boolean>(true);
 
     const containerRef = useRef<HTMLDivElement | null>(null);
-    const isContainerInViewport = useElemObserver(containerRef);
+    const imageGalleryRef = useRef<HTMLDivElement | null>(null);
+    const isContainerInViewport = useElemObserver(imageGalleryRef);
 
     const slideThroughImagesAutomatic = useCallback(() => {
         if (!isImmutable && isAutomaticImageSliderActive) {
@@ -165,7 +166,7 @@ export function ImageGallery({
     };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} ref={imageGalleryRef}>
             {/* Hero Image */}
             <div className={styles.image_desc_wrapper}>
                 <Image
