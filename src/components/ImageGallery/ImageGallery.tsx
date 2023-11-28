@@ -44,7 +44,11 @@ export function ImageGallery({
     const isContainerInViewport = useElemObserver(imageGalleryRef);
 
     const slideThroughImagesAutomatic = useCallback(() => {
-        if (!isImmutable && isAutomaticImageSliderActive) {
+        if (
+            !isImmutable &&
+            isAutomaticImageSliderActive &&
+            isContainerInViewport
+        ) {
             let nextIndex = prevIndex.current + 1;
             if (nextIndex >= images.length) {
                 nextIndex = 0;
@@ -58,11 +62,13 @@ export function ImageGallery({
             setCurrentIndex(nextIndex);
             onImageChange(nextIndex);
         }
-    }, [isImmutable, images, onImageChange, isAutomaticImageSliderActive]);
-
-    useEffect(() => {
-        setIsAutomaticImageSliderActice(isContainerInViewport);
-    }, [isContainerInViewport]);
+    }, [
+        isImmutable,
+        images,
+        onImageChange,
+        isAutomaticImageSliderActive,
+        isContainerInViewport,
+    ]);
 
     useEffect(() => {
         const interval = setInterval(slideThroughImagesAutomatic, 4000);
@@ -77,7 +83,14 @@ export function ImageGallery({
             as currentIndex is updated, it means we can assume 
             the initial animation has already run.
         */
-        wasInitialAnimationClassNameAssigned.current = true;
+        if (isContainerInViewport) {
+            /*
+                Its important to invoke if(isContainerInViewport) here, as otherwise
+                on the initial render with the initialValue of useElemObserver this effect
+                would indiciate too early that the initial spawn animation has already run.
+            */
+            wasInitialAnimationClassNameAssigned.current = true;
+        }
 
         /*
             save prevIndex as useEffect() runs before 
@@ -166,9 +179,9 @@ export function ImageGallery({
     };
 
     return (
-        <div className={styles.container} ref={imageGalleryRef}>
+        <div className={styles.container}>
             {/* Hero Image */}
-            <div className={styles.image_desc_wrapper}>
+            <div className={styles.image_desc_wrapper} ref={imageGalleryRef}>
                 <Image
                     ref={heroImageRef}
                     key={currentIndex}
