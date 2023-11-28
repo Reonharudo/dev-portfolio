@@ -142,6 +142,8 @@ export function TechStackSection() {
                 <SkillItem text={"Cypress"} />
                 <SkillItem text={"Testing Library"} />
                 <SkillItem text={"Mockito"} />
+                <SkillItem text={"SonarQube"} />
+                <SkillItem text={"ESLint"} />
                 <SkillItem text={"JUnit"} />
                 <SkillItem text={"TDD"} />
 
