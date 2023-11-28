@@ -22,7 +22,6 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
     });
 
     const setThemeCookieAndOnHTMLBody = useCallback((newTheme: Theme) => {
-        console.log("setThemeCookieAndOnHTMLBody", newTheme);
         //Set dataset theme attribute
         document.body.dataset.theme = newTheme;
 
@@ -61,7 +60,6 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
     }, []);
 
     function handleClick(selectedTheme: Theme) {
-        console.log("Handle click", selectedTheme);
         if (selectedTheme === Theme.DARK) {
             setCurrentTheme(() => {
                 setThemeCookieAndOnHTMLBody(Theme.LIGHT);
