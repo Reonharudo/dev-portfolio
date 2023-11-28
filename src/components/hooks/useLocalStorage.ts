@@ -33,7 +33,7 @@ export function useLocalStorage<T extends string>({
             }
         }
         window.addEventListener("storage", handleStorageChange);
-    }, []);
+    }, [initialValue, key]);
 
     useEffect(() => {
         if (value) {

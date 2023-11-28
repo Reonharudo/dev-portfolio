@@ -2,7 +2,7 @@
 import { Theme } from "@/components/hooks/theme";
 import { MoonIcon } from "@/components/icons/MoonIcon";
 import { SunIcon } from "@/components/icons/SunIcon";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./ThemeChangeBtn.module.css";
 import { useLocalStorage } from "@/components/hooks/useLocalStorage";
 
@@ -21,7 +21,7 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
         key: "theme",
     });
 
-    function setThemeCookieAndOnHTMLBody(theme: Theme) {
+    const setThemeCookieAndOnHTMLBody = useCallback((theme: Theme) => {
         //Set dataset theme attribute
         document.body.dataset.theme = theme;
 
@@ -33,9 +33,9 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
         const expires = expirationDate.toUTCString();
 
         document.cookie = `theme=${theme}; expires=${expires}`;
-    }
+    }, []);
 
-    useEffect(() => {
+    const handleLocalStorageThemeChange = useCallback(() => {
         if (
             localStorageTheme === Theme.DARK ||
             localStorageTheme === Theme.LIGHT
@@ -45,7 +45,16 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
             //set default
             setLocalStorageTheme(theme);
         }
-    }, [localStorageTheme]);
+    }, [
+        localStorageTheme,
+        setThemeCookieAndOnHTMLBody,
+        setLocalStorageTheme,
+        theme,
+    ]);
+
+    useEffect(() => {
+        handleLocalStorageThemeChange();
+    }, [localStorageTheme, handleLocalStorageThemeChange]);
 
     function handleClick(selectedTheme: Theme) {
         if (selectedTheme === Theme.DARK) {
