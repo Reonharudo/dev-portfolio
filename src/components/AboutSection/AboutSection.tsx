@@ -42,11 +42,11 @@ export function AboutSection() {
                     </p>
 
                     <p>
-                        💻 As a hardware enthusiast, I'm currently gearing up to
-                        build my next rig, eagerly anticipating the performance
-                        boost from the upcoming Zen5 CPU and 3D-VCache. My goal?
-                        To elevate my computing experience with a seamless
-                        upgrade to 32GB DDR5 RAM.
+                        💻 As a hardware enthusiast, I&apos;m currently gearing
+                        up to build my next rig, eagerly anticipating the
+                        performance boost from the upcoming Zen5 CPU and
+                        3D-VCache. My goal? To elevate my computing experience
+                        with a seamless upgrade to 32GB DDR5 RAM.
                     </p>
 
                     <p>
