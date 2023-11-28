@@ -13,7 +13,6 @@ export function useSSRTheme(): Theme {
     );
 
     if (prefersColorSchemeClientHintHeader) {
-        console.log("lol");
         return prefersColorSchemeClientHintHeader as Theme;
     }
 
