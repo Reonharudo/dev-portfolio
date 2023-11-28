@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./ImageGallery.module.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimationBtn } from "./AnimationBtn/AnimationBtn";
+import { useElemObserver } from "../hooks/useElemObserver";
 
 export enum SpawnAnimation {
     SWIPE_FROM_LEFT,
@@ -39,6 +40,7 @@ export function ImageGallery({
         useState<boolean>(true);
 
     const containerRef = useRef<HTMLDivElement | null>(null);
+    const isContainerInViewport = useElemObserver(containerRef);
 
     const slideThroughImagesAutomatic = useCallback(() => {
         if (!isImmutable && isAutomaticImageSliderActive) {
@@ -56,6 +58,10 @@ export function ImageGallery({
             onImageChange(nextIndex);
         }
     }, [isImmutable, images, onImageChange, isAutomaticImageSliderActive]);
+
+    useEffect(() => {
+        setIsAutomaticImageSliderActice(isContainerInViewport);
+    }, [isContainerInViewport]);
 
     useEffect(() => {
         const interval = setInterval(slideThroughImagesAutomatic, 4000);

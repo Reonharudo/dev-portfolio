@@ -3,7 +3,7 @@
 import { MutableRefObject, useEffect, useState } from "react";
 
 export function useElemObserver(elemRef: MutableRefObject<HTMLElement | null>) {
-    const [isInViewport, setIsInViewport] = useState<boolean>();
+    const [isInViewport, setIsInViewport] = useState<boolean>(false);
 
     function handleIntersection([entry]: IntersectionObserverEntry[]) {
         setIsInViewport(entry.isIntersecting);
