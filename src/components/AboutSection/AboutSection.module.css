@@ -15,6 +15,7 @@
 .description_container {
     grid-area: description_area;
     font-size: 1.2rem;
+    margin-left: 0.5rem;
 }
 
 .image_section {

@@ -26,32 +26,39 @@ export function AboutSection() {
             <SectionHeadline>About</SectionHeadline>
             <div className={styles.content}>
                 <div className={styles.description_container}>
-                    <p>Welcome on my page!</p>
                     <p>
-                        I am a {age} year old Software Engineer with a
-                        relentless passion for learning and staying at the
-                        forefront of technology.
+                        👋 Hello! I am a {age} year old Software Engineer with a
+                        relentless passion for learning and staying staying
+                        ahead in the ever-evolving world of technology.
                     </p>
                     <p>
-                        I embrace the philosophy that FOMO(Fear of Missing Out)
-                        drives continuous improvement in our rapidly evolving
-                        field.
+                        🚀 I believe in the power of continuous improvement,
+                        fueled by the Fear of Missing Out (FOMO). This
+                        philosophy has propelled me to explore cutting-edge
+                        technologies and embrace new challenges, resulting in my
+                        recent discovery of NextJS. A framework that saves me a
+                        lot of time to build SEO and performance critical
+                        Web-Apps.
                     </p>
 
                     <p>
-                        Beyond my software engineering endeavours, I am a
-                        hardware enthusiast. I&apos;m currently planning to
-                        build a new rig with the upcoming Zen5 CPU (maybe
-                        3D-VCache) so that I can finally upgrade to 32GB DDDR5
-                        Ram. :)
-                        <br />
-                        <br />
-                        Additionally, I actively collect and peruse Wikipedia
-                        articles spanning topics from medical science to
-                        philosophical or history, maintaining them as valuable
-                        references. I have huge folders containing all the links
-                        in my Dropbox. It&apos;s my go-to source for a bit of
-                        everything.
+                        💻 As a hardware enthusiast, I'm currently gearing up to
+                        build my next rig, eagerly anticipating the performance
+                        boost from the upcoming Zen5 CPU and 3D-VCache. My goal?
+                        To elevate my computing experience with a seamless
+                        upgrade to 32GB DDR5 RAM.
+                    </p>
+
+                    <p>
+                        📚 Beyond code, I immerse myself in diverse realms. My
+                        collection of Wikipedia articles spans topics from
+                        medical science to philosophy and history, serving as a
+                        treasure trove of valuable references.
+                    </p>
+
+                    <p>
+                        If you have any questions, or just want to chat, feel
+                        free to reach out to me!
                     </p>
                     <p>Leonhard Muellauer</p>
                 </div>
