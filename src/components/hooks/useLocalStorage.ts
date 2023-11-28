@@ -1,5 +1,11 @@
 "use client";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import {
+    Dispatch,
+    SetStateAction,
+    useCallback,
+    useEffect,
+    useState,
+} from "react";
 
 interface useLocalStorageProps<T extends string> {
     key: string;
@@ -13,9 +19,20 @@ export function useLocalStorage<T extends string>({
     string | undefined,
     Dispatch<SetStateAction<string | undefined>>
 ] {
-    const [value, setValue] = useState<string | undefined>(initialValue);
+    const initValue = useCallback(() => {
+        try {
+            const prevVal = localStorage.getItem(key);
+            if (prevVal) {
+                return prevVal;
+            }
+        } catch (err) {
+            return initialValue;
+        }
+    }, [key, initialValue]);
 
-    function handleStorageChange(ev: StorageEvent) {
+    const [value, setValue] = useState<string | undefined>(initValue);
+
+    const handleStorageChange = useCallback((ev: StorageEvent) => {
         const key = ev.key;
         if (key) {
             const latestVal = localStorage.getItem(key);
@@ -23,23 +40,25 @@ export function useLocalStorage<T extends string>({
                 setValue(latestVal);
             }
         }
-    }
+    }, []);
 
     useEffect(() => {
-        if (!initialValue) {
-            const prevVal = localStorage.getItem(key);
-            if (prevVal) {
-                setValue(prevVal);
-            }
-        }
         window.addEventListener("storage", handleStorageChange);
-    }, [initialValue, key]);
+
+        return () => {
+            window.removeEventListener("storage", handleStorageChange);
+        };
+    }, [handleStorageChange]);
 
     useEffect(() => {
-        if (value) {
-            localStorage.setItem(key, value);
+        try {
+            if (value) {
+                localStorage.setItem(key, value);
+            }
+        } catch (err) {
+            console.warn(err);
         }
-    }, [key, value]);
+    }, [value, key]);
 
     return [value, setValue];
 }

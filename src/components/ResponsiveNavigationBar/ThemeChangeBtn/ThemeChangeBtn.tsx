@@ -21,9 +21,9 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
         key: "theme",
     });
 
-    const setThemeCookieAndOnHTMLBody = useCallback((theme: Theme) => {
+    const setThemeCookieAndOnHTMLBody = useCallback((newTheme: Theme) => {
         //Set dataset theme attribute
-        document.body.dataset.theme = theme;
+        document.body.dataset.theme = newTheme;
 
         // Set cookie
         // -- Set expiration date to 350 days from now
@@ -32,7 +32,7 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
 
         const expires = expirationDate.toUTCString();
 
-        document.cookie = `theme=${theme}; expires=${expires}`;
+        document.cookie = `theme=${newTheme}; expires=${expires}`;
     }, []);
 
     const handleLocalStorageThemeChange = useCallback(() => {
@@ -41,6 +41,7 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
             localStorageTheme === Theme.LIGHT
         ) {
             setThemeCookieAndOnHTMLBody(localStorageTheme);
+            setCurrentTheme(localStorageTheme);
         } else {
             //set default
             setLocalStorageTheme(theme);
@@ -53,18 +54,24 @@ export function ThemeChangeBtn({ theme, className }: ThemeChangeBtnProps) {
     ]);
 
     useEffect(() => {
+        //update local storage only on mount
         handleLocalStorageThemeChange();
-    }, [localStorageTheme, handleLocalStorageThemeChange]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     function handleClick(selectedTheme: Theme) {
         if (selectedTheme === Theme.DARK) {
-            setThemeCookieAndOnHTMLBody(Theme.LIGHT);
-            setCurrentTheme(Theme.LIGHT);
-            setLocalStorageTheme(Theme.LIGHT);
+            setCurrentTheme(() => {
+                setThemeCookieAndOnHTMLBody(Theme.LIGHT);
+                setLocalStorageTheme(Theme.LIGHT);
+                return Theme.LIGHT;
+            });
         } else if (selectedTheme === Theme.LIGHT) {
-            setThemeCookieAndOnHTMLBody(Theme.DARK);
-            setCurrentTheme(Theme.DARK);
-            setLocalStorageTheme(Theme.DARK);
+            setCurrentTheme(() => {
+                setThemeCookieAndOnHTMLBody(Theme.DARK);
+                setLocalStorageTheme(Theme.DARK);
+                return Theme.DARK;
+            });
         }
     }
 
