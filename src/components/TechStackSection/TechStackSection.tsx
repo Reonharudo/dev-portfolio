@@ -165,6 +165,7 @@ export function TechStackSection() {
                 <SkillItem text={"Figma"} />
                 <SkillItem text={"UML"} />
                 <SkillItem text={"ERM (Chen Notation)"} />
+                <SkillItem text={"Erwin Data Modeler"} />
 
                 <SkillItem text={"Windows"} />
                 <SkillItem text={"MacOS"} />
