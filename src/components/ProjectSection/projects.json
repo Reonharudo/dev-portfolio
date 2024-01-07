@@ -30,7 +30,7 @@
         ]
     },
     {
-        "headline": "Secret Project",
+        "headline": "Hobby Viewer",
         "description": "I am currently developing an advanced web application focused on hobby management.\n\nThis comprehensive platform allows users to curate personalized lists with images, rich documents, series, games, and more.\n\nThe NextJS frontend is supported by two powerful microservices — one in Java SpringBoot and the other in NodeJS ExpressJS. While the images provided offer a glimpse to the vision, the project encompasses additional features.\n\nI plan to launch it professionally with a structured pricing model.\n\n",
         "images": [
             {
